@@ -259,7 +259,7 @@ export default async function Home() {
               </h3>
               <ul className="space-y-3" style={{ color: 'var(--boxing-brown)' }}>
                 {[
-                  'Real skills in areas they're passionate about',
+                  "Real skills in areas they're passionate about",
                   'A portfolio of work they created',
                   'Mentorship from trained staff',
                   'A peer community that builds them up'
@@ -280,7 +280,7 @@ export default async function Home() {
                   'All staff background checked & trained',
                   'Parent portal to track attendance',
                   'You control communication permissions',
-                  'Regular updates on your child's growth'
+                  "Regular updates on your child's growth"
                 ].map((item) => (
                   <li key={item} className="flex gap-3 font-[family-name:var(--font-playfair)]">
                     <span style={{ color: 'var(--boxing-gold)' }}>→</span>
