@@ -543,14 +543,14 @@ export default async function Home() {
             {/* Bio */}
             <div className="md:col-span-2 space-y-4">
               <p className="font-[family-name:var(--font-playfair)] text-lg leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
-                After 10 years running youth programs at YouthCity—serving 5,000+ young people annually with 200+
+                After 16 years running youth programs at YouthCity—serving 5,000+ young people annually with 200+
                 technology-integrated learning experiences—I kept seeing the same gap: programs that either
                 treated kids like data points or ignored accountability entirely.
               </p>
               <p className="font-[family-name:var(--font-playfair)] text-lg leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
-                Then I spent three years as Utah's Student Data Privacy Specialist, training 50,000+ educators
+                Then I spent six years as Utah's Student Data Privacy Specialist, training 50,000+ educators
                 and building the state's privacy infrastructure from scratch. I chaired the committee that wrote
-                Utah's K-12 AI framework. I learned what it takes to protect people while still building powerful systems.
+                Utah's K-12 AI professional development framework. I learned what it takes to protect people while still building powerful systems.
               </p>
               <p className="font-[family-name:var(--font-playfair)] text-lg leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
                 The Rings is where it all comes together: <strong>youth development that respects agency</strong>,
