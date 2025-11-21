@@ -84,7 +84,7 @@ export default async function Home() {
           </div>
 
           <p className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
-            Where youth ages 10–18 build real skills, create lasting work, and discover the champion within.
+            A community center for the whole family—from early childhood through adulthood—where everyone builds real skills and discovers the champion within.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -140,18 +140,84 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* All Day, All Ages */}
+      <section className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-cream)' }}>
+        <div className="max-w-5xl mx-auto">
+          <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
+            Open All Day
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-brown)' }}>
+            Serving the Whole Community
+          </h2>
+          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+            From morning childcare to evening adult classes—we keep the building alive and serving families all day long.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: 'Early Childhood',
+                time: 'Morning',
+                items: ['Affordable childcare', 'Mommy & Me classes', 'Pre-K readiness'],
+                color: 'var(--boxing-gold)'
+              },
+              {
+                title: 'Youth Programs',
+                time: 'After School',
+                items: ['Ages 10–18', 'Four pillars of training', 'Quest-based learning'],
+                color: 'var(--boxing-red)'
+              },
+              {
+                title: 'Adult Classes',
+                time: 'Evenings',
+                items: ['AI & technology', 'English language', 'Tax preparation'],
+                color: 'var(--boxing-brown)'
+              },
+              {
+                title: 'Community Events',
+                time: 'Weekends',
+                items: ['Paint nights', 'Craft workshops', 'Social gatherings'],
+                color: '#4a7c59'
+              }
+            ].map((program) => (
+              <div
+                key={program.title}
+                className="p-6 border-t-4 bg-white"
+                style={{ borderColor: program.color }}
+              >
+                <p className="font-[family-name:var(--font-oswald)] text-xs uppercase tracking-wider mb-1" style={{ color: program.color }}>
+                  {program.time}
+                </p>
+                <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-brown)' }}>
+                  {program.title}
+                </h3>
+                <ul className="text-sm space-y-1" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+                  {program.items.map((item) => (
+                    <li key={item} className="font-[family-name:var(--font-playfair)]">• {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center mt-8 font-[family-name:var(--font-playfair)] italic" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
+            Parents HOMAGO too—everyone is learning, everyone is growing.
+          </p>
+        </div>
+      </section>
+
       {/* The Nine Rings */}
-      <section id="rings" className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-cream)' }}>
+      <section id="rings" className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-black)' }}>
         <div className="max-w-5xl mx-auto">
           <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
             The Framework
           </p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-brown)' }}>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-cream)' }}>
             Nine Rings of Development
           </h2>
-          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-            Youth development isn't one-dimensional. We track growth across nine expanding rings—from
-            the inner self outward to the world.
+          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-sepia)' }}>
+            Growth isn't one-dimensional. We track development across nine expanding rings—from
+            the inner self outward to the world. For youth and adults alike.
           </p>
 
           <div className="grid md:grid-cols-3 gap-4">
@@ -169,12 +235,12 @@ export default async function Home() {
               <div
                 key={ring.name}
                 className="p-4 border-2 text-center"
-                style={{ borderColor: 'var(--boxing-gold)', backgroundColor: 'rgba(201, 162, 39, 0.05)' }}
+                style={{ borderColor: 'var(--boxing-gold)', backgroundColor: 'rgba(201, 162, 39, 0.1)' }}
               >
-                <h4 className="font-[family-name:var(--font-oswald)] text-lg font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--boxing-brown)' }}>
+                <h4 className="font-[family-name:var(--font-oswald)] text-lg font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--boxing-gold)' }}>
                   {ring.name}
                 </h4>
-                <p className="text-sm font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
+                <p className="text-sm font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-sepia)' }}>
                   {ring.desc}
                 </p>
               </div>
