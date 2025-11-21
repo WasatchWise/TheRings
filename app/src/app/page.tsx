@@ -202,11 +202,13 @@ export default async function Home() {
               confidence, portfolios of artifacts they're proud of, badges earned through quests that matter.
             </p>
             <p className="font-[family-name:var(--font-playfair)]">
-              The Center itself sits at the center of our philosophy—it's the <strong style={{ color: 'var(--boxing-gold)' }}>Center within the center of the Rings</strong>. 
-              From this physical campus, Champions build outward through all nine rings of their life, starting with Self at the core, 
-              expanding through Body, Brain, Bubble, Scene, Neighborhood, Community, and World, reaching Ether where existential 
-              questions bring them full circle back to who they are. The campus is where it all begins—where the inner champion meets 
-              the outer world.
+              The Center building sits at the heart of our campus—and that campus is the <strong style={{ color: 'var(--boxing-gold)' }}>center of the Rings</strong>. 
+              Surrounding the Center is a network of partner facilities that bring the nine rings to life: the skate park and outdoor 
+              recreation (Body), the library and high school (Brain), the senior center and animal shelter (Bubble), the fire department 
+              and civic buildings (Neighborhood & Community). Champions build outward through all nine rings—starting with Self at the core, 
+              expanding through Body, Brain, Bubble, Scene, Neighborhood, Community, and World, reaching Ether where existential questions 
+              bring them full circle back to who they are. The campus is where it all begins—where the inner champion meets the outer world, 
+              all within walking distance.
             </p>
             <p className="font-[family-name:var(--font-playfair)]">
               We believe every young person has a champion inside them. Our job is to help them
