@@ -29,9 +29,9 @@ const ringColors: Record<string, { base: string; glow: string }> = {
 }
 
 export function Cyclone({ rings, className }: CycloneProps) {
-  // Sort rings by the tornado order (Self at core/top, Ether at tip)
+  // Sort rings by the correct order (Self at core/top, Ether at tip)
   const sortedRings = [...rings].sort((a, b) => {
-    const order = ['self', 'body', 'brain', 'bubble', 'scene', 'neighborhood', 'community', 'world', 'ether']
+    const order = ['self', 'brain', 'body', 'bubble', 'scene', 'neighborhood', 'community', 'world', 'ether']
     return order.indexOf(a.slug) - order.indexOf(b.slug)
   })
 

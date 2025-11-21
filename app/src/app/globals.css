@@ -121,6 +121,18 @@
   --neon-green: oklch(0.8 0.2 145);
 }
 
+/* 1950s Boxing Theme Colors */
+:root {
+  --boxing-cream: #f5f0e6;
+  --boxing-gold: #c9a227;
+  --boxing-brown: #3d2914;
+  --boxing-black: #1a1a1a;
+  --boxing-red: #8b2635;
+  --boxing-sepia: #d4a574;
+  --font-playfair: 'Playfair Display', serif;
+  --font-oswald: 'Oswald', sans-serif;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
