@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
+import { FeedbackForm } from '@/components/ui/feedback-form'
+import { DynamicPhotoBackground } from '@/components/ui/dynamic-photo-background'
+import { DynamicPhotoCard } from '@/components/ui/dynamic-photo-card'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -175,8 +178,15 @@ export default async function Home() {
       </section>
 
       {/* Legacy Section */}
-      <section id="legacy" className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-brown)' }}>
-        <div className="max-w-4xl mx-auto">
+      <section id="legacy" className="py-20 px-4 relative min-h-[600px]">
+        <DynamicPhotoBackground
+          query="Gene Fullmer boxing champion 1950s"
+          overlay={true}
+          overlayOpacity={0.85}
+          fallbackColor="var(--boxing-brown)"
+          className="absolute inset-0"
+        />
+        <div className="max-w-4xl mx-auto relative z-10 py-8">
           <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
             The Legacy
           </p>
@@ -405,7 +415,7 @@ export default async function Home() {
             Programs
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-cream)' }}>
-            Four Pillars of Training
+            Four Pillars of Growth
           </h2>
           <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-sepia)' }}>
             Youth choose their path and go deep—building portfolios, earning recognition, and
@@ -523,16 +533,20 @@ export default async function Home() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 items-start">
-            {/* Photo placeholder */}
+            {/* Dynamic Photo */}
             <div className="md:col-span-1">
-              <div className="aspect-square rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--boxing-brown)' }}>
-                <div className="text-center p-6">
-                  <div className="text-6xl mb-4">🎯</div>
-                  <div className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider" style={{ color: 'var(--boxing-gold)' }}>
-                    Ring Leader
+              <DynamicPhotoCard
+                query="youth program director educator mentor"
+                aspectRatio="square"
+                fallbackElement={
+                  <div className="text-center p-6">
+                    <div className="text-6xl mb-4">🎯</div>
+                    <div className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider" style={{ color: 'var(--boxing-gold)' }}>
+                      Ring Leader
+                    </div>
                   </div>
-                </div>
-              </div>
+                }
+              />
               <div className="mt-4 text-center">
                 <p className="font-[family-name:var(--font-playfair)] text-sm italic" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
                   "The Interface Between<br />Systems and Stories"
@@ -605,9 +619,9 @@ export default async function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { title: 'Enroll', desc: 'Register your child', link: '/signup', cta: 'Get Started' },
-              { title: 'Donate', desc: 'Support local youth', link: '#', cta: 'Give Now' },
-              { title: 'Partner', desc: 'Collaborate with us', link: '#', cta: 'Contact Us' },
-              { title: 'Work Here', desc: 'Join our team', link: '#', cta: 'View Jobs' }
+              { title: 'Donate', desc: 'Support local youth', link: '#feedback', cta: 'Give Now' },
+              { title: 'Partner', desc: 'Collaborate with us', link: '#feedback', cta: 'Contact Us' },
+              { title: 'Work Here', desc: 'Join our team', link: '#feedback', cta: 'View Jobs' }
             ].map((item) => (
               <div key={item.title} className="p-6 text-center" style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}>
                 <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--boxing-cream)' }}>
@@ -656,6 +670,24 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Feedback Section */}
+      <section id="feedback" className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-red)' }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
+            Share Your Thoughts
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-cream)' }}>
+            Questions, Comments & Suggestions
+          </h2>
+          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-sepia)' }}>
+            We'd love to hear from you. Share your feedback, ask questions, or suggest ideas to help us improve The Rings.
+          </p>
+          <div className="max-w-2xl mx-auto">
+            <FeedbackForm />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 px-4 border-t-2" style={{ backgroundColor: 'var(--boxing-brown)', borderColor: 'var(--boxing-gold)' }}>
         <div className="max-w-6xl mx-auto">
@@ -697,7 +729,7 @@ export default async function Home() {
               <ul className="text-sm space-y-2 font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-sepia)' }}>
                 <li><a href="#" className="hover:opacity-70 transition-opacity">Instagram</a></li>
                 <li><a href="#" className="hover:opacity-70 transition-opacity">Facebook</a></li>
-                <li><a href="#" className="hover:opacity-70 transition-opacity">Contact</a></li>
+                <li><a href="#feedback" className="hover:opacity-70 transition-opacity">Contact</a></li>
               </ul>
             </div>
           </div>

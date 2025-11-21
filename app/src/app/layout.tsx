@@ -27,14 +27,26 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "The Rings at Fullmer Legacy Center",
   description: "Youth development platform with quest tracking, portfolio management, and Cyclone visualization",
+  manifest: "/manifest.json",
   icons: {
-    icon: "/cyclone.png",
-    apple: "/cyclone.png",
+    icon: [
+      { url: "/icon.webp", sizes: "512x512", type: "image/webp" },
+      { url: "/cyclone.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.webp", sizes: "180x180", type: "image/webp" },
+    ],
   },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "The Rings",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    themeColor: "#0a0a14",
   },
 };
 
