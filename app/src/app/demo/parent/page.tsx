@@ -81,60 +81,60 @@ export default function ParentDemo() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ backgroundColor: '#faf7f2' }}>
       {/* Header */}
-      <header className="border-b border-border/30 bg-card/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <header className="border-b-2 sticky top-0 z-50" style={{ backgroundColor: '#ffffff', borderColor: '#48bb78' }}>
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/" className="font-mono text-sm text-muted-foreground hover:text-primary">
+            <Link href="/" className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider hover:opacity-70" style={{ color: '#3d2914' }}>
               ← Back to Site
             </Link>
-            <span className="text-muted-foreground">/</span>
-            <span className="font-mono text-lg font-bold tracking-widest text-primary">
-              PARENT VIEW
+            <span style={{ color: '#48bb78' }}>|</span>
+            <span className="font-[family-name:var(--font-oswald)] text-lg font-bold tracking-widest uppercase" style={{ color: '#3d2914' }}>
+              Parent View
             </span>
           </div>
-          <div className="text-sm text-muted-foreground">
+          <div className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#3d2914' }}>
             The Martinez Family
           </div>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto p-4 space-y-6">
+      <main className="max-w-6xl mx-auto p-6 space-y-6">
         {/* Children Status */}
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-6">
           {children.map((child) => (
-            <div key={child.name} className="hud-border bg-card/50 p-4">
-              <div className="flex items-center justify-between mb-3">
+            <div key={child.name} className="bg-white p-6 shadow-sm rounded-lg border-l-4" style={{ borderColor: '#48bb78' }}>
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <CycloneMini rings={child.rings} />
                   <div>
-                    <div className="font-mono text-xl font-bold text-primary">{child.name}</div>
-                    <div className="text-xs text-muted-foreground">Age {child.age}</div>
+                    <div className="font-[family-name:var(--font-playfair)] text-2xl font-bold" style={{ color: '#3d2914' }}>{child.name}</div>
+                    <div className="text-sm" style={{ color: '#666' }}>Age {child.age}</div>
                   </div>
                 </div>
                 <div className="text-right">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-sm text-green-400 font-mono">Checked In</span>
+                    <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#48bb78' }} />
+                    <span className="text-sm font-[family-name:var(--font-oswald)]" style={{ color: '#48bb78' }}>Checked In</span>
                   </div>
-                  <div className="text-xs text-muted-foreground">{child.zone}</div>
+                  <div className="text-sm" style={{ color: '#666' }}>{child.zone}</div>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <div className="text-muted-foreground text-xs">Today</div>
-                  <div className="font-mono">{child.todayHours} hours</div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-3 rounded-lg" style={{ backgroundColor: '#f0fff4' }}>
+                  <div className="text-sm" style={{ color: '#666' }}>Today</div>
+                  <div className="font-[family-name:var(--font-playfair)] text-lg font-semibold" style={{ color: '#3d2914' }}>{child.todayHours} hours</div>
                 </div>
-                <div>
-                  <div className="text-muted-foreground text-xs">Status</div>
-                  <div className="font-mono text-green-400">{child.mood}</div>
+                <div className="p-3 rounded-lg" style={{ backgroundColor: '#f0fff4' }}>
+                  <div className="text-sm" style={{ color: '#666' }}>Status</div>
+                  <div className="font-[family-name:var(--font-playfair)] text-lg font-semibold" style={{ color: '#48bb78' }}>{child.mood}</div>
                 </div>
               </div>
               {child.currentQuest && (
-                <div className="mt-3 pt-3 border-t border-border/30">
-                  <div className="text-xs text-muted-foreground">Current Quest</div>
-                  <div className="text-sm font-mono text-accent">{child.currentQuest}</div>
+                <div className="mt-4 pt-4" style={{ borderTop: '1px solid #e2e8f0' }}>
+                  <div className="text-sm" style={{ color: '#666' }}>Current Quest</div>
+                  <div className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#3182ce' }}>{child.currentQuest}</div>
                 </div>
               )}
             </div>
@@ -143,27 +143,27 @@ export default function ParentDemo() {
 
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left Column */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-6">
             {/* Ring Progress Comparison */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Ring Progress Comparison
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {children.map((child) => (
                   <div key={child.name}>
-                    <div className="font-mono text-sm text-primary mb-3">{child.name}</div>
-                    <div className="space-y-2">
+                    <div className="font-[family-name:var(--font-playfair)] text-lg font-semibold mb-4" style={{ color: '#3182ce' }}>{child.name}</div>
+                    <div className="space-y-3">
                       {child.rings.slice(0, 5).map((ring) => (
                         <div key={ring.name} className="space-y-1">
-                          <div className="flex justify-between text-xs">
-                            <span className="font-mono text-foreground">{ring.name}</span>
-                            <span className="text-muted-foreground">{ring.level}%</span>
+                          <div className="flex justify-between text-sm">
+                            <span className="font-[family-name:var(--font-playfair)]" style={{ color: '#3d2914' }}>{ring.name}</span>
+                            <span style={{ color: '#666' }}>{ring.level}%</span>
                           </div>
-                          <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                          <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: '#e2e8f0' }}>
                             <div
-                              className="h-full bg-primary rounded-full transition-all duration-1000"
-                              style={{ width: `${ring.level}%` }}
+                              className="h-full rounded-full transition-all duration-1000"
+                              style={{ width: `${ring.level}%`, backgroundColor: '#48bb78' }}
                             />
                           </div>
                         </div>
@@ -175,37 +175,37 @@ export default function ParentDemo() {
             </div>
 
             {/* Recent Artifacts */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Recent Loot Drops
               </h2>
-              <div className="grid sm:grid-cols-3 gap-3">
+              <div className="grid sm:grid-cols-3 gap-4">
                 {recentArtifacts.map((artifact, i) => (
-                  <div key={i} className="border border-border/30 bg-card/30 p-3 rounded text-center">
-                    <div className="w-full h-20 bg-muted rounded mb-2 flex items-center justify-center text-2xl">
+                  <div key={i} className="border rounded-lg p-4 text-center" style={{ borderColor: '#e2e8f0', backgroundColor: '#f7fafc' }}>
+                    <div className="w-full h-20 rounded-lg mb-3 flex items-center justify-center text-3xl" style={{ backgroundColor: '#e2e8f0' }}>
                       {artifact.type === 'image' ? '📷' : '🎬'}
                     </div>
-                    <div className="text-sm font-mono">{artifact.title}</div>
-                    <div className="text-xs text-muted-foreground">{artifact.date}</div>
+                    <div className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#3d2914' }}>{artifact.title}</div>
+                    <div className="text-sm" style={{ color: '#666' }}>{artifact.date}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Staff Notes */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Notes from Staff
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {staffNotes.map((note, i) => (
-                  <div key={i} className="border-l-2 border-green-500/30 pl-3">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-mono text-sm text-green-400">{note.from}</span>
-                      <span className="text-xs text-muted-foreground">about {note.about}</span>
+                  <div key={i} className="border-l-4 pl-4" style={{ borderColor: '#48bb78' }}>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="font-[family-name:var(--font-playfair)] text-base font-semibold" style={{ color: '#48bb78' }}>{note.from}</span>
+                      <span className="text-sm" style={{ color: '#666' }}>about {note.about}</span>
                     </div>
-                    <div className="text-sm text-foreground">{note.note}</div>
-                    <div className="text-xs text-muted-foreground mt-1">{note.date}</div>
+                    <div className="text-base" style={{ color: '#3d2914' }}>{note.note}</div>
+                    <div className="text-sm mt-2" style={{ color: '#a0aec0' }}>{note.date}</div>
                   </div>
                 ))}
               </div>
@@ -213,54 +213,54 @@ export default function ParentDemo() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             {/* Upcoming Events */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Upcoming Events
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {upcomingEvents.map((event, i) => (
-                  <div key={i} className="text-sm">
-                    <div className="font-mono text-foreground">{event.name}</div>
-                    <div className="text-xs text-primary">{event.date}</div>
+                  <div key={i} className="border-l-4 pl-3" style={{ borderColor: '#d69e2e' }}>
+                    <div className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#3d2914' }}>{event.name}</div>
+                    <div className="text-sm" style={{ color: '#3182ce' }}>{event.date}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Adult Classes */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Classes for You
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {adultClasses.map((cls, i) => (
-                  <div key={i} className="text-sm">
-                    <div className="font-mono text-accent">{cls.name}</div>
-                    <div className="text-xs text-muted-foreground">{cls.date}</div>
-                    <div className="text-xs text-green-400">{cls.spots} spots left</div>
+                  <div key={i} className="p-3 rounded-lg" style={{ backgroundColor: '#f7fafc' }}>
+                    <div className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#3182ce' }}>{cls.name}</div>
+                    <div className="text-sm" style={{ color: '#666' }}>{cls.date}</div>
+                    <div className="text-sm" style={{ color: '#48bb78' }}>{cls.spots} spots left</div>
                   </div>
                 ))}
               </div>
-              <button className="w-full mt-3 text-sm px-3 py-2 bg-accent/20 text-accent rounded hover:bg-accent/30 font-mono">
+              <button className="w-full mt-4 text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#3182ce', color: 'white' }}>
                 Browse All Classes
               </button>
             </div>
 
             {/* Quick Actions */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Quick Actions
               </h2>
-              <div className="space-y-2">
-                <button className="w-full text-left text-sm px-3 py-2 bg-primary/20 text-primary rounded hover:bg-primary/30 font-mono">
+              <div className="space-y-3">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#4299e1', color: 'white' }}>
                   Message Staff
                 </button>
-                <button className="w-full text-left text-sm px-3 py-2 bg-green-500/20 text-green-400 rounded hover:bg-green-500/30 font-mono">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#48bb78', color: 'white' }}>
                   Update Pickup Time
                 </button>
-                <button className="w-full text-left text-sm px-3 py-2 bg-accent/20 text-accent rounded hover:bg-accent/30 font-mono">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#805ad5', color: 'white' }}>
                   Volunteer Sign-up
                 </button>
               </div>
@@ -269,7 +269,7 @@ export default function ParentDemo() {
         </div>
 
         {/* Footer Note */}
-        <div className="text-center text-xs text-muted-foreground font-mono py-4">
+        <div className="text-center text-sm py-6 font-[family-name:var(--font-playfair)] italic" style={{ color: '#a0aec0' }}>
           This is a simulated parent view showing real-time child status, progress tracking, and family engagement.
         </div>
       </main>

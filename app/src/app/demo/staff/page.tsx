@@ -59,54 +59,53 @@ export default function StaffDemo() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ backgroundColor: '#f0f4f8' }}>
       {/* Live Activity Notifications */}
       <ActivityNotification />
 
       {/* Header */}
-      <header className="border-b border-border/30 bg-card/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <header className="border-b-2 sticky top-0 z-50" style={{ backgroundColor: '#ffffff', borderColor: '#2d3748' }}>
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/" className="font-mono text-sm text-muted-foreground hover:text-primary">
+            <Link href="/" className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider hover:opacity-70" style={{ color: '#2d3748' }}>
               ← Back to Site
             </Link>
-            <span className="text-muted-foreground">/</span>
-            <span className="font-mono text-lg font-bold tracking-widest text-primary">
-              STAFF VIEW
+            <span style={{ color: '#4299e1' }}>|</span>
+            <span className="font-[family-name:var(--font-oswald)] text-lg font-bold tracking-widest uppercase" style={{ color: '#2d3748' }}>
+              Staff View
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="font-mono text-sm text-muted-foreground">
+            <span className="font-[family-name:var(--font-oswald)] text-sm" style={{ color: '#666' }}>
               {time.toLocaleTimeString()}
             </span>
-            <span className="font-mono text-sm text-cyan-400">{myShift.zone}</span>
-            <span className="text-xs text-muted-foreground">{myShift.time}</span>
+            <span className="font-[family-name:var(--font-oswald)] text-sm font-bold" style={{ color: '#4299e1' }}>{myShift.zone}</span>
+            <span className="text-sm" style={{ color: '#666' }}>{myShift.time}</span>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto p-4 space-y-6">
+      <main className="max-w-7xl mx-auto p-6 space-y-6">
         {/* Alerts */}
         {alerts.length > 0 && (
-          <div className="space-y-2">
+          <div className="space-y-3">
             {alerts.map((alert, i) => (
               <div
                 key={i}
-                className={`p-3 rounded border flex items-center justify-between ${
-                  alert.type === 'warning' ? 'border-yellow-500/30 bg-yellow-500/10' :
-                  alert.type === 'success' ? 'border-green-500/30 bg-green-500/10' :
-                  'border-primary/30 bg-primary/10'
-                } text-sm font-mono`}
+                className="p-4 rounded-lg border-l-4 flex items-center justify-between shadow-sm"
+                style={{
+                  backgroundColor: alert.type === 'warning' ? '#fffbeb' : alert.type === 'success' ? '#f0fff4' : '#ebf8ff',
+                  borderColor: alert.type === 'warning' ? '#d69e2e' : alert.type === 'success' ? '#38a169' : '#4299e1'
+                }}
               >
-                <span className={
-                  alert.type === 'warning' ? 'text-yellow-400' :
-                  alert.type === 'success' ? 'text-green-400' :
-                  'text-primary'
-                }>
+                <span
+                  className="text-sm font-[family-name:var(--font-playfair)]"
+                  style={{ color: alert.type === 'warning' ? '#744210' : alert.type === 'success' ? '#22543d' : '#2a4365' }}
+                >
                   {alert.priority === 'high' && '⚡ '}
                   {alert.message}
                 </span>
-                <button className="text-xs px-2 py-1 bg-card/50 rounded hover:bg-card">
+                <button className="text-sm px-3 py-1 rounded font-[family-name:var(--font-oswald)] uppercase tracking-wider" style={{ backgroundColor: '#e2e8f0', color: '#4a5568' }}>
                   Dismiss
                 </button>
               </div>
@@ -116,39 +115,39 @@ export default function StaffDemo() {
 
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left Column - Map and Youth */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-6">
             {/* Live Campus Map */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 flex items-center gap-2">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-4 flex items-center gap-2" style={{ color: '#2d3748' }}>
                 Live Campus Map
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#38a169' }} />
               </h2>
-              <div className="relative aspect-[16/10] bg-card/30 rounded border border-border/30">
+              <div className="relative aspect-[16/10] rounded-lg border-2" style={{ backgroundColor: '#e2e8f0', borderColor: '#cbd5e0' }}>
                 {zones.map((zone) => (
                   <button
                     key={zone.id}
                     onClick={() => setSelectedZone(selectedZone === zone.id ? null : zone.id)}
-                    className={`absolute rounded transition-all hover:scale-[1.02] ${
-                      selectedZone === zone.id ? 'ring-2 ring-white' : ''
-                    } ${zone.id === 'technest' ? 'ring-1 ring-cyan-400/50' : ''}`}
+                    className={`absolute rounded-lg transition-all hover:scale-[1.02] ${
+                      selectedZone === zone.id ? 'ring-2 ring-blue-500' : ''
+                    } ${zone.id === 'technest' ? 'ring-2 ring-blue-400' : ''}`}
                     style={{
                       left: `${zone.x}%`,
                       top: `${zone.y}%`,
                       width: `${zone.w}%`,
                       height: `${zone.h}%`,
-                      backgroundColor: `${zone.color}20`,
-                      borderColor: `${zone.color}50`,
-                      borderWidth: '1px',
+                      backgroundColor: `${zone.color}30`,
+                      borderColor: `${zone.color}`,
+                      borderWidth: '2px',
                     }}
                   >
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-xs font-mono font-bold" style={{ color: zone.color }}>
+                      <span className="text-xs font-[family-name:var(--font-oswald)] font-bold uppercase" style={{ color: zone.color }}>
                         {zone.name}
                       </span>
-                      <span className="text-lg font-bold font-mono text-white">
+                      <span className="text-xl font-bold font-[family-name:var(--font-playfair)]" style={{ color: '#2d3748' }}>
                         {zone.count}
                       </span>
-                      <span className="text-[10px] text-muted-foreground">people</span>
+                      <span className="text-[10px]" style={{ color: '#666' }}>people</span>
                     </div>
                     {/* Pulsing dots for active zones */}
                     {zone.count > 5 && (
@@ -160,46 +159,46 @@ export default function StaffDemo() {
                   </button>
                 ))}
               </div>
-              <div className="flex justify-between mt-3 text-xs text-muted-foreground">
-                <span>Total in building: {zones.reduce((sum, z) => sum + z.count, 0)}</span>
+              <div className="flex justify-between mt-3 text-sm" style={{ color: '#666' }}>
+                <span>Total in building: <strong style={{ color: '#2d3748' }}>{zones.reduce((sum, z) => sum + z.count, 0)}</strong></span>
                 <span>Your zone highlighted</span>
               </div>
             </div>
 
             {/* Youth in My Zone */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-4" style={{ color: '#2d3748' }}>
                 Youth in {myShift.zone} Right Now
               </h2>
               <div className="space-y-3">
                 {inMyZone.map((youth) => (
-                  <div key={youth.name} className={`flex items-center justify-between p-3 border rounded transition-colors ${
-                    youth.status === 'idle' ? 'border-yellow-500/30 bg-yellow-500/5' : 'border-border/30 bg-card/30'
-                  }`}>
+                  <div key={youth.name} className="flex items-center justify-between p-4 border rounded-lg transition-colors"
+                    style={{
+                      borderColor: youth.status === 'idle' ? '#d69e2e' : '#e2e8f0',
+                      backgroundColor: youth.status === 'idle' ? '#fffbeb' : '#f7fafc'
+                    }}>
                     <div>
-                      <div className="font-mono text-foreground flex items-center gap-2">
+                      <div className="font-[family-name:var(--font-playfair)] text-base flex items-center gap-2" style={{ color: '#2d3748' }}>
                         {youth.name}
                         {youth.status === 'idle' && (
-                          <span className="text-[10px] px-1.5 py-0.5 bg-yellow-500/20 text-yellow-400 rounded">
+                          <span className="text-xs px-2 py-0.5 rounded font-[family-name:var(--font-oswald)] uppercase" style={{ backgroundColor: '#fef3c7', color: '#92400e' }}>
                             IDLE
                           </span>
                         )}
                       </div>
-                      <div className="text-xs text-muted-foreground">
+                      <div className="text-sm" style={{ color: '#666' }}>
                         Age {youth.age} • {youth.currentQuest || 'No active quest'} • Tapped in {youth.tapIn}
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className={`text-xs font-mono ${
-                        youth.status === 'active' ? 'text-green-400' : 'text-yellow-400'
-                      }`}>
+                      <div className="text-sm font-[family-name:var(--font-oswald)]" style={{ color: youth.status === 'active' ? '#38a169' : '#d69e2e' }}>
                         {youth.mood}
                       </div>
-                      <div className="flex gap-2 mt-1">
-                        <button className="text-xs px-2 py-1 bg-primary/20 text-primary rounded hover:bg-primary/30 transition-colors">
+                      <div className="flex gap-2 mt-2">
+                        <button className="text-sm px-3 py-1 rounded font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#4299e1', color: 'white' }}>
                           Note
                         </button>
-                        <button className="text-xs px-2 py-1 bg-accent/20 text-accent rounded hover:bg-accent/30 transition-colors">
+                        <button className="text-sm px-3 py-1 rounded font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#805ad5', color: 'white' }}>
                           Check-in
                         </button>
                       </div>
@@ -210,17 +209,17 @@ export default function StaffDemo() {
             </div>
 
             {/* My Crews */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-4" style={{ color: '#2d3748' }}>
                 My Crews
               </h2>
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {myCrews.map((crew) => (
-                  <div key={crew.name} className="p-3 border border-primary/30 bg-primary/5 rounded hover:border-primary/50 transition-colors">
-                    <div className="font-mono font-bold text-primary">{crew.name}</div>
-                    <div className="text-xs text-muted-foreground">{crew.members} members</div>
-                    <div className="text-sm text-foreground mt-2">{crew.quest}</div>
-                    <div className="text-xs text-cyan-400 mt-1">{crew.nextSession}</div>
+                  <div key={crew.name} className="p-4 border-2 rounded-lg hover:shadow-md transition-all" style={{ borderColor: '#4299e1', backgroundColor: '#ebf8ff' }}>
+                    <div className="font-[family-name:var(--font-oswald)] font-bold text-lg" style={{ color: '#2b6cb0' }}>{crew.name}</div>
+                    <div className="text-sm" style={{ color: '#666' }}>{crew.members} members</div>
+                    <div className="font-[family-name:var(--font-playfair)] text-base mt-2" style={{ color: '#2d3748' }}>{crew.quest}</div>
+                    <div className="text-sm mt-1" style={{ color: '#4299e1' }}>{crew.nextSession}</div>
                   </div>
                 ))}
               </div>
@@ -228,24 +227,24 @@ export default function StaffDemo() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             {/* Today's Schedule */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-4" style={{ color: '#2d3748' }}>
                 Today&apos;s Schedule
               </h2>
               <div className="space-y-3">
                 {todaySchedule.map((item, i) => (
-                  <div key={i} className={`text-sm ${item.status === 'now' ? 'text-primary' : 'text-muted-foreground'}`}>
-                    <div className="font-mono flex items-center gap-2">
+                  <div key={i} className="text-sm">
+                    <div className="font-[family-name:var(--font-oswald)] flex items-center gap-2" style={{ color: item.status === 'now' ? '#2b6cb0' : '#666' }}>
                       {item.time}
                       {item.status === 'now' && (
-                        <span className="text-[10px] px-1.5 py-0.5 bg-green-500/20 text-green-400 rounded">
+                        <span className="text-xs px-2 py-0.5 rounded font-[family-name:var(--font-oswald)] uppercase" style={{ backgroundColor: '#c6f6d5', color: '#22543d' }}>
                           NOW
                         </span>
                       )}
                     </div>
-                    <div className={item.status === 'now' ? 'text-foreground font-medium' : ''}>
+                    <div className="font-[family-name:var(--font-playfair)]" style={{ color: item.status === 'now' ? '#2d3748' : '#666', fontWeight: item.status === 'now' ? '500' : '400' }}>
                       {item.event}
                     </div>
                   </div>
@@ -254,16 +253,16 @@ export default function StaffDemo() {
             </div>
 
             {/* Recent Notes */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-4" style={{ color: '#2d3748' }}>
                 Recent Notes
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {recentNotes.map((note, i) => (
-                  <div key={i} className="text-sm border-l-2 border-accent/30 pl-3">
-                    <div className="font-mono text-accent">{note.youth}</div>
-                    <div className="text-muted-foreground text-xs">{note.note}</div>
-                    <div className="text-xs text-muted-foreground/50 mt-1">
+                  <div key={i} className="border-l-4 pl-3" style={{ borderColor: '#805ad5' }}>
+                    <div className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#553c9a' }}>{note.youth}</div>
+                    <div className="text-sm" style={{ color: '#666' }}>{note.note}</div>
+                    <div className="text-sm mt-1" style={{ color: '#a0aec0' }}>
                       {note.by} • {note.time}
                     </div>
                   </div>
@@ -272,34 +271,34 @@ export default function StaffDemo() {
             </div>
 
             {/* Quick Actions */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-4" style={{ color: '#2d3748' }}>
                 Quick Actions
               </h2>
-              <div className="space-y-2">
-                <button className="w-full text-left text-sm px-3 py-2 bg-primary/20 text-primary rounded hover:bg-primary/30 font-mono transition-colors">
+              <div className="space-y-3">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#4299e1', color: 'white' }}>
                   + Check In Youth
                 </button>
-                <button className="w-full text-left text-sm px-3 py-2 bg-accent/20 text-accent rounded hover:bg-accent/30 font-mono transition-colors">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#805ad5', color: 'white' }}>
                   + Log Activity Note
                 </button>
-                <button className="w-full text-left text-sm px-3 py-2 bg-green-500/20 text-green-400 rounded hover:bg-green-500/30 font-mono transition-colors">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#38a169', color: 'white' }}>
                   + Award Badge
                 </button>
-                <button className="w-full text-left text-sm px-3 py-2 bg-yellow-500/20 text-yellow-400 rounded hover:bg-yellow-500/30 font-mono transition-colors">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#d69e2e', color: 'white' }}>
                   + Safety Incident
                 </button>
               </div>
             </div>
 
             {/* Walkie Channel */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-3">
+            <div className="bg-white p-6 shadow-sm rounded-lg">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-3" style={{ color: '#2d3748' }}>
                 Walkie Channel
               </h2>
-              <div className="flex items-center justify-between p-2 bg-green-500/10 border border-green-500/30 rounded">
-                <span className="text-sm font-mono text-green-400">All Staff</span>
-                <button className="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded hover:bg-green-500/30">
+              <div className="flex items-center justify-between p-3 rounded-lg" style={{ backgroundColor: '#f0fff4', border: '2px solid #38a169' }}>
+                <span className="text-sm font-[family-name:var(--font-oswald)]" style={{ color: '#22543d' }}>All Staff</span>
+                <button className="text-sm px-4 py-2 rounded font-[family-name:var(--font-oswald)] uppercase tracking-wider" style={{ backgroundColor: '#38a169', color: 'white' }}>
                   Ping
                 </button>
               </div>
@@ -308,7 +307,7 @@ export default function StaffDemo() {
         </div>
 
         {/* Footer Note */}
-        <div className="text-center text-xs text-muted-foreground font-mono py-4">
+        <div className="text-center text-sm py-6 font-[family-name:var(--font-playfair)] italic" style={{ color: '#a0aec0' }}>
           This is a simulated staff view showing zone management, youth tracking, and crew facilitation tools.
         </div>
       </main>
