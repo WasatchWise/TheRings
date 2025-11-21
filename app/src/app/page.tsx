@@ -313,7 +313,7 @@ export default async function Home() {
               {
                 title: 'Youth Programs',
                 time: 'Out of School Time',
-                items: ['Ages 10–18', 'Four pillars of growth', 'Quest-based learning'],
+                items: ['Ages 7–17', 'Four pillars of growth', 'Quest-based learning'],
                 color: 'var(--boxing-red)'
               },
               {
