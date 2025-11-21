@@ -65,7 +65,7 @@ export default async function Home() {
           </h1>
 
           <p className="font-[family-name:var(--font-playfair)] text-lg md:text-xl italic mb-6" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-            The Relationships that Inspire, Nurture, and Guide Society
+            The Relationships that Inspire, Nurture, and Guide your Story
           </p>
 
           <p className="font-[family-name:var(--font-oswald)] text-lg md:text-xl tracking-[0.3em] uppercase mb-2" style={{ color: 'var(--boxing-brown)' }}>
