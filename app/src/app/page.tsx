@@ -202,8 +202,15 @@ export default async function Home() {
               confidence, portfolios of artifacts they're proud of, badges earned through quests that matter.
             </p>
             <p className="font-[family-name:var(--font-playfair)]">
+              The Center itself sits at the center of our philosophy—it's the <strong style={{ color: 'var(--boxing-gold)' }}>Center within the center of the Rings</strong>. 
+              From this physical campus, Champions build outward through all nine rings of their life, starting with Self at the core, 
+              expanding through Body, Brain, Bubble, Scene, Neighborhood, Community, and World, reaching Ether where existential 
+              questions bring them full circle back to who they are. The campus is where it all begins—where the inner champion meets 
+              the outer world.
+            </p>
+            <p className="font-[family-name:var(--font-playfair)]">
               We believe every young person has a champion inside them. Our job is to help them
-              find it and develop it across all nine rings of their life—from Self to Ether, building outward.
+              find it and develop it, one ring at a time.
             </p>
           </div>
         </div>
