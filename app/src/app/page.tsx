@@ -259,10 +259,10 @@ export default async function Home() {
                 Dev Stages
               </h3>
               <p className="font-[family-name:var(--font-playfair)] text-sm mb-4" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
-                0-7 Littles • 7-14 Formative • 14-21 Transitional
+                0-7 Littles • 7-17 Formative • 17-21 LEADS
               </p>
               <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-                Early childhood builds foundations. Formative years need structure and skill-building. Transitional shifts to leadership prep, autonomy, and pathway planning. Staff at 21+.
+                Early childhood builds foundations. Formative years need structure and skill-building. LEADS prepares 17-21 for leadership and autonomy. Driving staff at 21+.
               </p>
             </div>
 
