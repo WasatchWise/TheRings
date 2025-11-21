@@ -2,7 +2,6 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { Cyclone } from '@/components/ui/cyclone'
-import { DashboardLayout } from '@/components/layout/dashboard-layout'
 
 export default async function Dashboard() {
   const supabase = await createClient()
@@ -50,7 +49,6 @@ export default async function Dashboard() {
   })) || []
 
   return (
-    <DashboardLayout>
       <div className="space-y-6">
         {/* Stats Bar */}
         <div className="grid grid-cols-3 gap-4">
@@ -169,6 +167,5 @@ export default async function Dashboard() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
   )
 }
