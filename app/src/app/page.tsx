@@ -142,7 +142,7 @@ export default async function Home() {
           </p>
 
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-bold italic mb-8" style={{ color: 'var(--boxing-red)' }}>
-            Fullmer Legacy Center
+            Fullmer Legacy Center Campus
           </h2>
 
           {/* Decorative divider */}
@@ -798,7 +798,7 @@ export default async function Home() {
             Visit Us
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--boxing-brown)' }}>
-            Fullmer Legacy Center
+            Fullmer Legacy Center Campus
           </h2>
           <p className="font-[family-name:var(--font-playfair)] text-xl mb-2" style={{ color: 'var(--boxing-brown)' }}>
             South Jordan, Utah
@@ -856,7 +856,7 @@ export default async function Home() {
                 The Rings
               </div>
               <p className="text-sm font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-sepia)' }}>
-                Youth development reimagined at the Fullmer Legacy Center.
+                Youth development reimagined at the Fullmer Legacy Center Campus.
               </p>
             </div>
             <div>
