@@ -256,10 +256,10 @@ export default async function Home() {
                 Dev Stages
               </h3>
               <p className="font-[family-name:var(--font-playfair)] text-sm mb-4" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
-                10-12, 13-15, 16-18 need different things
+                10-14 Formative • 14-21 Transitional
               </p>
               <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-                We meet youth where they are—younger kids need more structure, older teens need more autonomy. Same pillars, different approach.
+                Younger youth need structure and skill-building. 14-21 shifts to leadership prep, autonomy practice, and pathway planning. Staff at 21.
               </p>
             </div>
 
