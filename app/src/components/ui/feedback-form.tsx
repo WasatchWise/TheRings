@@ -134,12 +134,11 @@ export function FeedbackForm({ className = '' }: FeedbackFormProps) {
             rows={5}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-4 py-3 border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 resize-none"
+            className="w-full px-4 py-3 border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--boxing-gold)] resize-none"
             style={{
               backgroundColor: 'rgba(255,255,255,0.1)',
               borderColor: 'var(--boxing-gold)',
               color: 'var(--boxing-cream)',
-              focusRingColor: 'var(--boxing-gold)'
             }}
             disabled={status === 'submitting'}
             placeholder="Share your thoughts, questions, or suggestions..."
