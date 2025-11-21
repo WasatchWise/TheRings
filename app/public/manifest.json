@@ -1,0 +1,37 @@
+{
+  "name": "The Rings - Champion Portal",
+  "short_name": "The Rings",
+  "description": "Youth development platform - Tap In, Drop Loot, Build Your Cyclone",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a14",
+  "theme_color": "#0a0a14",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Tap In",
+      "url": "/tap-in",
+      "description": "Check in to your current zone"
+    },
+    {
+      "name": "Drop Loot",
+      "url": "/loot-drop",
+      "description": "Capture and upload an artifact"
+    }
+  ]
+}
