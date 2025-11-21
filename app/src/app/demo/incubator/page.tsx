@@ -147,7 +147,6 @@ export default function IncubatorDemo() {
                     style={{
                       backgroundColor: desk.occupied ? '#6366f1' : '#e2e8f0',
                       color: desk.occupied ? 'white' : '#64748b',
-                      ringColor: '#6366f1',
                     }}
                   >
                     {desk.id}
