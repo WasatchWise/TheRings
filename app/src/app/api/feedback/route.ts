@@ -1,6 +1,56 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 
+async function sendFeedbackEmail(submission: { name: string; email: string; category: string; message: string }) {
+  const sendgridKey = process.env.SENDGRID_API_KEY
+  if (!sendgridKey) {
+    console.warn('SendGrid API key not configured - email notification skipped')
+    return false
+  }
+
+  try {
+    // Default recipient - can be overridden via environment variable
+    const recipientEmail = process.env.FEEDBACK_RECIPIENT_EMAIL || 'feedback@getintherings.com'
+    
+    const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${sendgridKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        personalizations: [{
+          to: [{ email: recipientEmail }],
+          subject: `New Feedback: ${submission.category}`,
+        }],
+        from: { 
+          email: 'noreply@getintherings.com',
+          name: 'The Rings Feedback System'
+        },
+        reply_to: { email: submission.email, name: submission.name },
+        content: [{
+          type: 'text/html',
+          value: `
+            <h2>New Feedback Submission</h2>
+            <p><strong>Category:</strong> ${submission.category}</p>
+            <p><strong>From:</strong> ${submission.name} (${submission.email})</p>
+            <hr>
+            <p><strong>Message:</strong></p>
+            <p>${submission.message.replace(/\n/g, '<br>')}</p>
+            <hr>
+            <p><small>Submitted at ${new Date().toLocaleString()}</small></p>
+          `
+        }],
+      }),
+    })
+
+    return response.ok
+  } catch (error) {
+    console.error('Error sending feedback email:', error)
+    return false
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
@@ -68,6 +118,11 @@ export async function POST(request: Request) {
         { status: 500 }
       )
     }
+
+    // Send email notification (don't fail the request if email fails)
+    sendFeedbackEmail({ name, email, category, message }).catch(err => {
+      console.error('Failed to send feedback email notification:', err)
+    })
 
     return NextResponse.json(
       { success: true, id: data.id },
