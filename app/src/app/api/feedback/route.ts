@@ -10,7 +10,7 @@ async function sendFeedbackEmail(submission: { name: string; email: string; cate
 
   try {
     // Default recipient - can be overridden via environment variable
-    const recipientEmail = process.env.FEEDBACK_RECIPIENT_EMAIL || 'feedback@getintherings.com'
+    const recipientEmail = process.env.FEEDBACK_RECIPIENT_EMAIL || 'admin@wasatchwise.com'
     
     const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
       method: 'POST',
