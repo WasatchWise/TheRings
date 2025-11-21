@@ -512,6 +512,86 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* The Architect */}
+      <section className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-cream)' }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
+            The Architect
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-12" style={{ color: 'var(--boxing-brown)' }}>
+            John Lyman, M.Ed.
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            {/* Photo placeholder */}
+            <div className="md:col-span-1">
+              <div className="aspect-square rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--boxing-brown)' }}>
+                <div className="text-center p-6">
+                  <div className="text-6xl mb-4">🎯</div>
+                  <div className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider" style={{ color: 'var(--boxing-gold)' }}>
+                    Ring Leader
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <p className="font-[family-name:var(--font-playfair)] text-sm italic" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
+                  "The Interface Between<br />Systems and Stories"
+                </p>
+              </div>
+            </div>
+
+            {/* Bio */}
+            <div className="md:col-span-2 space-y-4">
+              <p className="font-[family-name:var(--font-playfair)] text-lg leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
+                After 10 years running youth programs at YouthCity—serving 5,000+ young people annually with 200+
+                technology-integrated learning experiences—I kept seeing the same gap: programs that either
+                treated kids like data points or ignored accountability entirely.
+              </p>
+              <p className="font-[family-name:var(--font-playfair)] text-lg leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
+                Then I spent three years as Utah's Student Data Privacy Specialist, training 50,000+ educators
+                and building the state's privacy infrastructure from scratch. I chaired the committee that wrote
+                Utah's K-12 AI framework. I learned what it takes to protect people while still building powerful systems.
+              </p>
+              <p className="font-[family-name:var(--font-playfair)] text-lg leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
+                The Rings is where it all comes together: <strong>youth development that respects agency</strong>,
+                <strong>technology that serves humans</strong>, and <strong>systems that keep data private</strong>.
+                Every tap-in, every quest, every badge—designed so the young person controls their own story.
+              </p>
+
+              {/* Credentials */}
+              <div className="pt-6 grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg" style={{ backgroundColor: 'var(--boxing-brown)', opacity: 0.9 }}>
+                  <div className="font-[family-name:var(--font-oswald)] text-xs uppercase tracking-wider mb-1" style={{ color: 'var(--boxing-gold)' }}>
+                    Background
+                  </div>
+                  <ul className="text-sm space-y-1 font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-sepia)' }}>
+                    <li>• M.Ed. Educational Psychology</li>
+                    <li>• 25+ years in education</li>
+                    <li>• VR/AR pioneer in youth programs</li>
+                  </ul>
+                </div>
+                <div className="p-4 rounded-lg" style={{ backgroundColor: 'var(--boxing-brown)', opacity: 0.9 }}>
+                  <div className="font-[family-name:var(--font-oswald)] text-xs uppercase tracking-wider mb-1" style={{ color: 'var(--boxing-gold)' }}>
+                    Philosophy
+                  </div>
+                  <ul className="text-sm space-y-1 font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-sepia)' }}>
+                    <li>• Agency over surveillance</li>
+                    <li>• Humans in the loop</li>
+                    <li>• Privacy by design</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* The musician angle */}
+              <p className="font-[family-name:var(--font-playfair)] text-sm italic pt-4" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
+                Also: 24 years as bassist/songwriter for Starmy (Lollapalooza 2004, 6 albums).
+                The discipline of building songs taught me how to build systems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Get Involved */}
       <section id="join" className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-red)' }}>
         <div className="max-w-5xl mx-auto text-center">
