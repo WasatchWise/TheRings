@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Cyclone } from '@/components/ui/cyclone'
 
 export default function YouthDemo() {
   const champion = {
@@ -10,15 +11,15 @@ export default function YouthDemo() {
   }
 
   const rings = [
-    { name: 'Self', level: 45, color: '#e85d3b' },
-    { name: 'Brain', level: 72, color: '#f4c542' },
-    { name: 'Body', level: 38, color: '#7ecce5' },
-    { name: 'Bubble', level: 55, color: '#4a90d9' },
-    { name: 'Scene', level: 68, color: '#2d5a87' },
-    { name: 'Neighborhood', level: 25, color: '#e85d3b' },
-    { name: 'Community', level: 30, color: '#8b9a3a' },
-    { name: 'World', level: 15, color: '#4a90d9' },
-    { name: 'Ether', level: 82, color: '#2d5a87' },
+    { id: '1', name: 'Self', slug: 'self', level: 45, maxLevel: 100 },
+    { id: '2', name: 'Brain', slug: 'brain', level: 72, maxLevel: 100 },
+    { id: '3', name: 'Body', slug: 'body', level: 38, maxLevel: 100 },
+    { id: '4', name: 'Bubble', slug: 'bubble', level: 55, maxLevel: 100 },
+    { id: '5', name: 'Scene', slug: 'scene', level: 68, maxLevel: 100 },
+    { id: '6', name: 'Neighborhood', slug: 'neighborhood', level: 25, maxLevel: 100 },
+    { id: '7', name: 'Community', slug: 'community', level: 30, maxLevel: 100 },
+    { id: '8', name: 'World', slug: 'world', level: 15, maxLevel: 100 },
+    { id: '9', name: 'Ether', slug: 'ether', level: 82, maxLevel: 100 },
   ]
 
   const activeQuests = [
@@ -86,44 +87,12 @@ export default function YouthDemo() {
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left Column - Cyclone & Quests */}
           <div className="lg:col-span-2 space-y-4">
-            {/* Mini Cyclone */}
-            <div className="hud-border bg-card/50 p-4">
+            {/* Cyclone Visualization */}
+            <div className="hud-border bg-card/50 p-6">
               <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 text-center">
                 Your Cyclone
               </h2>
-              <div className="grid grid-cols-3 gap-2">
-                {rings.map((ring) => (
-                  <div key={ring.name} className="text-center">
-                    <div className="relative w-12 h-12 mx-auto mb-1">
-                      <svg className="w-full h-full -rotate-90">
-                        <circle
-                          cx="24"
-                          cy="24"
-                          r="20"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                          className="text-muted"
-                        />
-                        <circle
-                          cx="24"
-                          cy="24"
-                          r="20"
-                          fill="none"
-                          stroke={ring.color}
-                          strokeWidth="4"
-                          strokeDasharray={`${ring.level * 1.26} 126`}
-                          className="transition-all duration-500"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center text-xs font-mono font-bold">
-                        {ring.level}
-                      </div>
-                    </div>
-                    <div className="text-[10px] font-mono text-muted-foreground">{ring.name}</div>
-                  </div>
-                ))}
-              </div>
+              <Cyclone rings={rings} size="md" animated={true} />
             </div>
 
             {/* Active Quests */}
