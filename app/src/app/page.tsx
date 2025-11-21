@@ -60,9 +60,13 @@ export default async function Home() {
             South Jordan, Utah • Est. 2025
           </p>
 
-          <h1 className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-[0.9]" style={{ color: 'var(--boxing-brown)' }}>
+          <h1 className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl lg:text-8xl font-black mb-4 leading-[0.9]" style={{ color: 'var(--boxing-brown)' }}>
             THE RINGS
           </h1>
+
+          <p className="font-[family-name:var(--font-playfair)] text-lg md:text-xl italic mb-6" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+            The Relationships that Inspire, Nurture, and Guide Society
+          </p>
 
           <p className="font-[family-name:var(--font-oswald)] text-lg md:text-xl tracking-[0.3em] uppercase mb-2" style={{ color: 'var(--boxing-brown)' }}>
             at
