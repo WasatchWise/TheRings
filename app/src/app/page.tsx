@@ -7,8 +7,40 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen" style={{ backgroundColor: 'var(--boxing-cream)' }}>
+      {/* Demo Mode Banner */}
+      <div className="fixed top-0 w-full z-[60] py-3 px-4" style={{ backgroundColor: 'var(--boxing-black)' }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="text-center font-[family-name:var(--font-oswald)] text-xs tracking-widest uppercase mb-2" style={{ color: 'var(--boxing-gold)' }}>
+            Demo Mode: See The Rings Through Different Eyes
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            <Link href="/demo/board" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: 'var(--boxing-gold)', color: 'var(--boxing-black)' }}>
+              Board Member
+            </Link>
+            <Link href="/demo/staff" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: 'var(--boxing-red)', color: 'var(--boxing-cream)' }}>
+              Staff
+            </Link>
+            <Link href="/demo/parent" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#4a7c59', color: 'var(--boxing-cream)' }}>
+              Parent
+            </Link>
+            <Link href="/demo/youth" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#3d6b8c', color: 'var(--boxing-cream)' }}>
+              Youth
+            </Link>
+            <Link href="/demo/adult" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#6b4c7a', color: 'var(--boxing-cream)' }}>
+              Adult
+            </Link>
+            <Link href="/demo/senior" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: 'var(--boxing-brown)', color: 'var(--boxing-cream)' }}>
+              Senior
+            </Link>
+            <Link href="/demo/partner" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider border transition-colors" style={{ borderColor: 'var(--boxing-gold)', color: 'var(--boxing-gold)' }}>
+              Partner Event
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 border-b-2" style={{
+      <nav className="fixed top-[72px] w-full z-50 border-b-2" style={{
         backgroundColor: 'var(--boxing-cream)',
         borderColor: 'var(--boxing-brown)'
       }}>
@@ -50,7 +82,7 @@ export default async function Home() {
       </nav>
 
       {/* Hero - Fight Poster Style */}
-      <section className="pt-24 pb-16 px-4 relative">
+      <section className="pt-40 pb-16 px-4 relative">
         {/* Decorative corners */}
         <div className="absolute top-20 left-4 w-16 h-16 border-l-4 border-t-4" style={{ borderColor: 'var(--boxing-gold)' }} />
         <div className="absolute top-20 right-4 w-16 h-16 border-r-4 border-t-4" style={{ borderColor: 'var(--boxing-gold)' }} />
