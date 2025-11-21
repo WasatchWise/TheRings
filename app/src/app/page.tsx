@@ -129,8 +129,12 @@ export default async function Home() {
             THE RINGS
           </h1>
 
-          <p className="font-[family-name:var(--font-playfair)] text-lg md:text-xl italic mb-6" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-            The Relationships that Inspire, Nurture, and Guide your Story
+          <p className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl lg:text-4xl italic mb-6 leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
+            The <span className="font-black text-3xl md:text-4xl lg:text-5xl" style={{ color: 'var(--boxing-gold)' }}>R</span>elationships that{' '}
+            <span className="font-black text-3xl md:text-4xl lg:text-5xl" style={{ color: 'var(--boxing-gold)' }}>I</span>nspire,{' '}
+            <span className="font-black text-3xl md:text-4xl lg:text-5xl" style={{ color: 'var(--boxing-gold)' }}>N</span>urture, and{' '}
+            <span className="font-black text-3xl md:text-4xl lg:text-5xl" style={{ color: 'var(--boxing-gold)' }}>G</span>uide your{' '}
+            <span className="font-black text-3xl md:text-4xl lg:text-5xl" style={{ color: 'var(--boxing-gold)' }}>S</span>tory
           </p>
 
           <p className="font-[family-name:var(--font-oswald)] text-lg md:text-xl tracking-[0.3em] uppercase mb-2" style={{ color: 'var(--boxing-brown)' }}>
@@ -394,7 +398,8 @@ export default async function Home() {
           </h2>
           <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-sepia)' }}>
             Growth isn't one-dimensional. We track development across nine expanding rings—from
-            the inner self outward to the world. For youth and adults alike.
+            the inner Self outward through Body, Brain, Bubble, Scene, Neighborhood, Community, and World, 
+            reaching Ether where existential questions bring us full circle back to Self. For youth and adults alike.
           </p>
 
           <div className="grid md:grid-cols-3 gap-4">
@@ -407,7 +412,7 @@ export default async function Home() {
               { name: 'Neighborhood', desc: 'Local community, surroundings' },
               { name: 'Community', desc: 'Civic engagement, service' },
               { name: 'World', desc: 'Global awareness, cultures' },
-              { name: 'Ether', desc: 'Digital spaces, online worlds' },
+              { name: 'Ether', desc: 'Digital spaces, existential questions, spiritual growth. The outer ring that circles back to Self—where meaning, purpose, and identity are explored beyond the material world.' },
             ].map((ring) => (
               <div
                 key={ring.name}
