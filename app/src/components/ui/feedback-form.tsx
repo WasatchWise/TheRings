@@ -70,12 +70,11 @@ export function FeedbackForm({ className = '' }: FeedbackFormProps) {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="w-full px-4 py-3 border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--boxing-gold)]"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 borderColor: 'var(--boxing-gold)',
                 color: 'var(--boxing-cream)',
-                focusRingColor: 'var(--boxing-gold)'
               }}
               disabled={status === 'submitting'}
             />
@@ -90,12 +89,11 @@ export function FeedbackForm({ className = '' }: FeedbackFormProps) {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="w-full px-4 py-3 border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--boxing-gold)]"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 borderColor: 'var(--boxing-gold)',
                 color: 'var(--boxing-cream)',
-                focusRingColor: 'var(--boxing-gold)'
               }}
               disabled={status === 'submitting'}
             />
