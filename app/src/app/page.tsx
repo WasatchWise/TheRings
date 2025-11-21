@@ -201,16 +201,85 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* All Day, All Ages */}
+      {/* The Science Section */}
       <section className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-cream)' }}>
+        <div className="max-w-5xl mx-auto">
+          <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
+            The Science
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-brown)' }}>
+            Built on How Young People Actually Learn
+          </h2>
+          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+            Our approach isn't invented—it's grounded in brain science and proven learning models.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* HOMAGO */}
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl" style={{ backgroundColor: 'var(--boxing-gold)', color: 'var(--boxing-brown)' }}>
+                →
+              </div>
+              <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-brown)' }}>
+                HOMAGO
+              </h3>
+              <p className="font-[family-name:var(--font-playfair)] text-sm mb-4" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
+                <strong>H</strong>anging <strong>O</strong>ut → <strong>M</strong>essing <strong>A</strong>round → <strong>G</strong>eeking <strong>O</strong>ut
+              </p>
+              <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+                Youth start by exploring casually, then experiment with what interests them, then go deep on what they love. We don't force—we facilitate the natural progression.
+              </p>
+            </div>
+
+            {/* Brain Science */}
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl" style={{ backgroundColor: 'var(--boxing-red)', color: 'var(--boxing-cream)' }}>
+                🧠
+              </div>
+              <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-brown)' }}>
+                Brain Science
+              </h3>
+              <p className="font-[family-name:var(--font-playfair)] text-sm mb-4" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
+                Adolescent brains are wired for risk, novelty, and peer connection
+              </p>
+              <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+                We don't fight this—we channel it. Real challenges, real stakes, real peer crews. The teenage brain isn't broken; it's built for exactly what we offer.
+              </p>
+            </div>
+
+            {/* SOLE */}
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl" style={{ backgroundColor: '#4a7c59', color: 'var(--boxing-cream)' }}>
+                🔄
+              </div>
+              <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-brown)' }}>
+                SOLE
+              </h3>
+              <p className="font-[family-name:var(--font-playfair)] text-sm mb-4" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
+                Self-Organized Learning Environment
+              </p>
+              <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+                Youth choose their quests, form their crews, and drive their learning. Staff are facilitators, not lecturers. Agency creates engagement that forced curriculum never can.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-center mt-12 font-[family-name:var(--font-playfair)] italic" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
+            This isn't babysitting. This is intentional youth development backed by research.
+          </p>
+        </div>
+      </section>
+
+      {/* All Day, All Ages */}
+      <section className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-black)' }}>
         <div className="max-w-5xl mx-auto">
           <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
             Open All Day
           </p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-brown)' }}>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-cream)' }}>
             Serving the Whole Community
           </h2>
-          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-sepia)' }}>
             From morning childcare to evening adult classes—we keep the building alive and serving families all day long.
           </p>
 
@@ -232,7 +301,7 @@ export default async function Home() {
                 title: 'Adult Classes',
                 time: 'Evenings',
                 items: ['AI & technology', 'English language', 'Tax preparation'],
-                color: 'var(--boxing-brown)'
+                color: '#3d6b8c'
               },
               {
                 title: 'Community Events',
@@ -243,16 +312,16 @@ export default async function Home() {
             ].map((program) => (
               <div
                 key={program.title}
-                className="p-6 border-t-4 bg-white text-center"
-                style={{ borderColor: program.color }}
+                className="p-6 border-t-4 text-center"
+                style={{ borderColor: program.color, backgroundColor: 'rgba(255,255,255,0.05)' }}
               >
                 <p className="font-[family-name:var(--font-oswald)] text-xs font-medium uppercase tracking-wider mb-1" style={{ color: program.color }}>
                   {program.time}
                 </p>
-                <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-brown)' }}>
+                <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-cream)' }}>
                   {program.title}
                 </h3>
-                <ul className="text-sm space-y-1" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
+                <ul className="text-sm space-y-1" style={{ color: 'var(--boxing-sepia)' }}>
                   {program.items.map((item) => (
                     <li key={item} className="font-[family-name:var(--font-playfair)] font-medium">{item}</li>
                   ))}
@@ -261,8 +330,8 @@ export default async function Home() {
             ))}
           </div>
 
-          <p className="text-center mt-8 font-[family-name:var(--font-playfair)] italic" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
-            Parents HOMAGO too—everyone is learning, everyone is growing.
+          <p className="text-center mt-8 font-[family-name:var(--font-playfair)] italic" style={{ color: 'var(--boxing-sepia)' }}>
+            Adults HOMAGO too—Hanging Out at events, Messing Around with new skills, Geeking Out on what matters.
           </p>
         </div>
       </section>
