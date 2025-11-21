@@ -151,7 +151,7 @@ export default async function Home() {
           </div>
 
           <p className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: 'var(--boxing-brown)' }}>
-            A community center for the whole family—from early childhood through adulthood—where everyone builds real skills and discovers the champion within.
+            A community center for the whole family—from early childhood (ages 0–7) through adulthood—where Champions build real skills, create portfolios of artifacts, and discover the champion within.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -203,12 +203,12 @@ export default async function Home() {
             </p>
             <p className="font-[family-name:var(--font-playfair)]">
               The Fullmer Legacy Center carries that spirit forward. This isn't a place where
-              kids come to be entertained. It's a place where they come to <strong style={{ color: 'var(--boxing-cream)' }}>build something real</strong>—skills,
-              confidence, portfolios of work they're proud of.
+              Champions come to be entertained. It's a place where they come to <strong style={{ color: 'var(--boxing-cream)' }}>build something real</strong>—skills,
+              confidence, portfolios of artifacts they're proud of, badges earned through quests that matter.
             </p>
             <p className="font-[family-name:var(--font-playfair)]">
               We believe every young person has a champion inside them. Our job is to help them
-              find it and develop it across all nine rings of their life.
+              find it and develop it across all nine rings of their life—from Self to Ether, building outward.
             </p>
           </div>
         </div>
@@ -272,7 +272,7 @@ export default async function Home() {
                 0-7 Littles • 7-17 Formative • 17-21 LEADS
               </p>
               <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-                Early childhood builds foundations. Formative years need structure and skill-building. LEADS prepares 17-21 for leadership and autonomy. Driving staff at 21+.
+                Early childhood (0–7) builds foundations. Formative years (7–17) need structure and skill-building. LEADS (17–21) prepares for leadership and autonomy. Driving staff positions available at 21+.
               </p>
             </div>
 
@@ -316,27 +316,31 @@ export default async function Home() {
             {[
               {
                 title: 'Early Childhood',
-                time: 'Morning',
-                items: ['Affordable childcare', 'Mommy & Me classes', 'Pre-K readiness'],
+                age: 'Ages 0–7',
+                time: '6am–3pm',
+                items: ['Full-day & half-day childcare', 'Mommy & Me classes', 'Pre-K readiness programs', 'Sliding scale fees available'],
                 color: 'var(--boxing-gold)'
               },
               {
                 title: 'Youth Programs',
+                age: 'Ages 7–17',
                 time: 'Out of School Time',
-                items: ['Ages 7–17', 'Four pillars of growth', 'Quest-based learning'],
+                items: ['Four pillars of growth', 'Quest-based learning', 'Portfolio building', 'Mentorship'],
                 color: 'var(--boxing-red)'
               },
               {
-                title: 'Adult Classes',
-                time: 'Evenings',
-                items: ['AI & technology', 'English language', 'Tax preparation'],
-                color: '#3d6b8c'
+                title: 'LEADS Program',
+                age: 'Ages 17–21',
+                time: 'Flexible Schedule',
+                items: ['Leadership training', 'Pathway planning', 'Paid roles available', 'College & career prep'],
+                color: '#6366f1'
               },
               {
-                title: 'Community Events',
-                time: 'Weekends',
-                items: ['Paint nights', 'Craft workshops', 'Social gatherings'],
-                color: '#4a7c59'
+                title: 'Adult & Community',
+                age: '18+',
+                time: 'Evenings & Weekends',
+                items: ['AI & technology classes', 'English language learning', 'Tax preparation (VITA)', 'Community events & workshops'],
+                color: '#3d6b8c'
               }
             ].map((program) => (
               <div
@@ -347,9 +351,12 @@ export default async function Home() {
                 <p className="font-[family-name:var(--font-oswald)] text-xs font-medium uppercase tracking-wider mb-1" style={{ color: program.color }}>
                   {program.time}
                 </p>
-                <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-cream)' }}>
+                <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--boxing-cream)' }}>
                   {program.title}
                 </h3>
+                <p className="font-[family-name:var(--font-playfair)] text-sm mb-3" style={{ color: 'var(--boxing-sepia)' }}>
+                  {program.age}
+                </p>
                 <ul className="text-sm space-y-1" style={{ color: 'var(--boxing-sepia)' }}>
                   {program.items.map((item) => (
                     <li key={item} className="font-[family-name:var(--font-playfair)] font-medium">{item}</li>
@@ -357,6 +364,26 @@ export default async function Home() {
                 </ul>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 p-6 border-t-4 text-center" style={{ borderColor: '#6366f1', backgroundColor: 'rgba(99, 102, 241, 0.1)' }}>
+            <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: '#6366f1' }}>
+              LEADS Program (Ages 17–21)
+            </h3>
+            <p className="font-[family-name:var(--font-playfair)] text-base mb-4" style={{ color: 'var(--boxing-cream)' }}>
+              Our leadership pipeline for young adults preparing for independence. LEADS participants mentor younger Champions,
+              lead quest crews, and take on paid roles within the program. Perfect for those exploring pathways to college, career, or military service.
+            </p>
+            <ul className="text-sm space-y-2 font-[family-name:var(--font-playfair)] mb-4" style={{ color: 'var(--boxing-sepia)' }}>
+              <li>• Paid leadership positions ($12–$18/hour)</li>
+              <li>• Pathway planning & career exploration</li>
+              <li>• Mentorship training & certification</li>
+              <li>• Resume building from portfolio artifacts</li>
+              <li>• College & career prep workshops</li>
+            </ul>
+            <p className="font-[family-name:var(--font-playfair)] text-xs italic mt-4" style={{ color: 'var(--boxing-sepia)' }}>
+              Staff positions requiring driving (ages 21+) available. All staff must pass background checks and complete training.
+            </p>
           </div>
 
           <p className="text-center mt-8 font-[family-name:var(--font-playfair)] italic" style={{ color: 'var(--boxing-sepia)' }}>
@@ -417,10 +444,19 @@ export default async function Home() {
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-cream)' }}>
             Four Pillars of Growth
           </h2>
-          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-sepia)' }}>
-            Youth choose their path and go deep—building portfolios, earning recognition, and
-            completing challenges that mean something.
+          <p className="text-center max-w-2xl mx-auto mb-8 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-sepia)' }}>
+            Youth ages 7–17 choose their path and go deep—building portfolios of artifacts, earning badges, and
+            completing quests that mean something. After age 17, youth transition to LEADS for leadership training and paid positions.
           </p>
+          <div className="text-center mb-12">
+            <p className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-2" style={{ color: 'var(--boxing-gold)' }}>
+              Youth Programs Schedule
+            </p>
+            <p className="font-[family-name:var(--font-playfair)] text-base" style={{ color: 'var(--boxing-sepia)' }}>
+              Monday–Friday: 3:00pm–8:00pm (School days) • 10:00am–6:00pm (School breaks)<br />
+              Saturday: 10:00am–4:00pm
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
@@ -484,14 +520,17 @@ export default async function Home() {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-4" style={{ color: 'var(--boxing-brown)' }}>
-                What Your Child Gets
+                What Your Champion Gets
               </h3>
               <ul className="space-y-3" style={{ color: 'var(--boxing-brown)' }}>
                 {[
                   "Real skills in areas they're passionate about",
-                  'A portfolio of work they created',
+                  'A portfolio of artifacts they created',
                   'Mentorship from trained staff',
-                  'A peer community that builds them up'
+                  'A peer community that builds them up',
+                  'Quest-based learning across four pillars',
+                  'Badge recognition for achievements',
+                  'Leadership opportunities through LEADS (ages 17–21)'
                 ].map((item) => (
                   <li key={item} className="flex gap-3 font-[family-name:var(--font-playfair)]">
                     <span style={{ color: 'var(--boxing-gold)' }}>→</span>
@@ -507,9 +546,11 @@ export default async function Home() {
               <ul className="space-y-3" style={{ color: 'var(--boxing-brown)' }}>
                 {[
                   'All staff background checked & trained',
-                  'Parent portal to track attendance',
+                  'Parent portal to track attendance & progress',
                   'You control communication permissions',
-                  "Regular updates on your child's growth"
+                  "Regular updates on your child's growth",
+                  'Real-time check-in notifications',
+                  'Privacy-first data collection'
                 ].map((item) => (
                   <li key={item} className="flex gap-3 font-[family-name:var(--font-playfair)]">
                     <span style={{ color: 'var(--boxing-gold)' }}>→</span>
@@ -517,6 +558,121 @@ export default async function Home() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing & Fees */}
+      <section className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-cream)' }}>
+        <div className="max-w-5xl mx-auto">
+          <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
+            Affordable Access
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--boxing-brown)' }}>
+            Sliding Scale Membership
+          </h2>
+          <p className="text-center max-w-2xl mx-auto mb-12 font-[family-name:var(--font-playfair)] text-lg" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+            Our fees are based on family size and household income to ensure every family can participate. No one is turned away for inability to pay.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                tier: 'Tier 1',
+                income: 'Up to 185% of Federal Poverty Level',
+                single: '$25/month',
+                family: '$40/month',
+                description: 'Full access to all programs, reduced fees for adult classes',
+                color: '#4a7c59'
+              },
+              {
+                tier: 'Tier 2',
+                income: '186–300% of Federal Poverty Level',
+                single: '$50/month',
+                family: '$80/month',
+                description: 'Full access to all programs, standard adult class fees',
+                color: 'var(--boxing-gold)'
+              },
+              {
+                tier: 'Tier 3',
+                income: 'Above 300% of Federal Poverty Level',
+                single: '$75/month',
+                family: '$120/month',
+                description: 'Full access + supports scholarships for other families',
+                color: 'var(--boxing-red)'
+              }
+            ].map((tier) => (
+              <div
+                key={tier.tier}
+                className="p-6 border-t-4 text-center"
+                style={{ borderColor: tier.color, backgroundColor: 'rgba(255,255,255,0.5)' }}
+              >
+                <h3 className="font-[family-name:var(--font-oswald)] text-lg font-bold uppercase tracking-wider mb-2" style={{ color: tier.color }}>
+                  {tier.tier}
+                </h3>
+                <p className="font-[family-name:var(--font-playfair)] text-xs mb-4" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
+                  {tier.income}
+                </p>
+                <div className="mb-4">
+                  <p className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-1" style={{ color: 'var(--boxing-brown)' }}>
+                    Single Child
+                  </p>
+                  <p className="font-[family-name:var(--font-playfair)] text-2xl font-bold" style={{ color: tier.color }}>
+                    {tier.single}
+                  </p>
+                </div>
+                <div className="mb-4">
+                  <p className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-1" style={{ color: 'var(--boxing-brown)' }}>
+                    Family (2+ Children)
+                  </p>
+                  <p className="font-[family-name:var(--font-playfair)] text-2xl font-bold" style={{ color: tier.color }}>
+                    {tier.family}
+                  </p>
+                </div>
+                <p className="font-[family-name:var(--font-playfair)] text-xs italic mt-4" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
+                  {tier.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-white p-8 rounded-lg border-2" style={{ borderColor: 'var(--boxing-gold)' }}>
+            <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-4 text-center" style={{ color: 'var(--boxing-brown)' }}>
+              What's Included
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-[family-name:var(--font-oswald)] text-sm font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-red)' }}>
+                  Youth Programs (Ages 7–17)
+                </h4>
+                <ul className="space-y-2 font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)' }}>
+                  <li>• Unlimited quest participation</li>
+                  <li>• Access to all four pillars</li>
+                  <li>• Portfolio building & artifacts</li>
+                  <li>• Badge system & recognition</li>
+                  <li>• Crew-based learning</li>
+                  <li>• Mentorship programs</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-[family-name:var(--font-oswald)] text-sm font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-red)' }}>
+                  Additional Services
+                </h4>
+                <ul className="space-y-2 font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)' }}>
+                  <li>• Early childhood childcare (separate fees apply)</li>
+                  <li>• LEADS program (ages 17–21, paid positions available)</li>
+                  <li>• Adult classes (per-class or package pricing)</li>
+                  <li>• Community events (free or low-cost)</li>
+                  <li>• Family membership portal</li>
+                  <li>• Parent/guardian communication tools</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 pt-6 border-t-2 text-center" style={{ borderColor: 'var(--boxing-gold)' }}>
+              <p className="font-[family-name:var(--font-playfair)] text-sm italic" style={{ color: 'var(--boxing-brown)' }}>
+                Financial assistance available for families facing hardship. Contact us to discuss payment plans or scholarship opportunities.
+              </p>
             </div>
           </div>
         </div>
@@ -655,9 +811,20 @@ export default async function Home() {
           <p className="font-[family-name:var(--font-playfair)] text-xl mb-2" style={{ color: 'var(--boxing-brown)' }}>
             South Jordan, Utah
           </p>
-          <p className="font-[family-name:var(--font-playfair)] mb-8" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
-            Monday–Friday, 3pm–8pm • Saturday 10am–4pm
-          </p>
+          <div className="mb-8 space-y-2">
+            <p className="font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+              <strong>Early Childhood (Ages 0–7):</strong> Monday–Friday, 6am–3pm
+            </p>
+            <p className="font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+              <strong>Youth Programs (Ages 7–17):</strong> Monday–Friday, 3pm–8pm • Saturday 10am–4pm
+            </p>
+            <p className="font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+              <strong>LEADS (Ages 17–21):</strong> Flexible schedule with paid positions
+            </p>
+            <p className="font-[family-name:var(--font-playfair)]" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+              <strong>Adult Classes:</strong> Evenings & weekends (schedule varies)
+            </p>
+          </div>
           <a
             href="https://maps.google.com"
             target="_blank"
