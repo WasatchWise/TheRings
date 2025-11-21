@@ -243,18 +243,18 @@ export default async function Home() {
             ].map((program) => (
               <div
                 key={program.title}
-                className="p-6 border-t-4 bg-white"
+                className="p-6 border-t-4 bg-white text-center"
                 style={{ borderColor: program.color }}
               >
-                <p className="font-[family-name:var(--font-oswald)] text-xs uppercase tracking-wider mb-1" style={{ color: program.color }}>
+                <p className="font-[family-name:var(--font-oswald)] text-xs font-medium uppercase tracking-wider mb-1" style={{ color: program.color }}>
                   {program.time}
                 </p>
                 <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-brown)' }}>
                   {program.title}
                 </h3>
-                <ul className="text-sm space-y-1" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+                <ul className="text-sm space-y-1" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
                   {program.items.map((item) => (
-                    <li key={item} className="font-[family-name:var(--font-playfair)]">• {item}</li>
+                    <li key={item} className="font-[family-name:var(--font-playfair)] font-medium">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -353,18 +353,18 @@ export default async function Home() {
             ].map((pillar) => (
               <div
                 key={pillar.name}
-                className="p-8 border-l-4"
+                className="p-8 text-center border-t-4"
                 style={{ borderColor: pillar.color, backgroundColor: 'rgba(255,255,255,0.03)' }}
               >
                 <h3 className="font-[family-name:var(--font-oswald)] text-2xl font-bold uppercase tracking-wider mb-3" style={{ color: pillar.color }}>
                   {pillar.name}
                 </h3>
-                <p className="font-[family-name:var(--font-playfair)] mb-4" style={{ color: 'var(--boxing-sepia)' }}>
+                <p className="font-[family-name:var(--font-playfair)] font-medium mb-4 text-base" style={{ color: 'var(--boxing-sepia)' }}>
                   {pillar.desc}
                 </p>
-                <ul className="text-sm space-y-1" style={{ color: 'var(--boxing-cream)', opacity: 0.7 }}>
+                <ul className="text-sm space-y-1" style={{ color: 'var(--boxing-cream)', opacity: 0.8 }}>
                   {pillar.items.map((item) => (
-                    <li key={item} className="font-[family-name:var(--font-playfair)]">• {item}</li>
+                    <li key={item} className="font-[family-name:var(--font-playfair)] font-medium">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -441,16 +441,16 @@ export default async function Home() {
               { title: 'Partner', desc: 'Collaborate with us', link: '#', cta: 'Contact Us' },
               { title: 'Work Here', desc: 'Join our team', link: '#', cta: 'View Jobs' }
             ].map((item) => (
-              <div key={item.title} className="p-6 text-left" style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}>
-                <h3 className="font-[family-name:var(--font-oswald)] text-lg font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--boxing-cream)' }}>
+              <div key={item.title} className="p-6 text-center" style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}>
+                <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--boxing-cream)' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm font-[family-name:var(--font-playfair)] mb-3" style={{ color: 'var(--boxing-sepia)' }}>
+                <p className="text-sm font-[family-name:var(--font-playfair)] font-medium mb-3" style={{ color: 'var(--boxing-sepia)' }}>
                   {item.desc}
                 </p>
                 <Link
                   href={item.link}
-                  className="text-sm font-[family-name:var(--font-oswald)] uppercase tracking-wider hover:opacity-70 transition-opacity"
+                  className="text-sm font-[family-name:var(--font-oswald)] font-medium uppercase tracking-wider hover:opacity-70 transition-opacity"
                   style={{ color: 'var(--boxing-gold)' }}
                 >
                   {item.cta} →
