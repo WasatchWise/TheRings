@@ -35,6 +35,9 @@ export default async function Home() {
             <Link href="/demo/partner" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider border transition-colors" style={{ borderColor: 'var(--boxing-gold)', color: 'var(--boxing-gold)' }}>
               Partner Event
             </Link>
+            <Link href="/demo/incubator" className="px-3 py-1 text-xs font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#6366f1', color: 'white' }}>
+              Incubator
+            </Link>
           </div>
         </div>
       </div>
