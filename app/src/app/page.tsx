@@ -82,12 +82,41 @@ export default async function Home() {
       </nav>
 
       {/* Hero - Fight Poster Style */}
-      <section className="pt-40 pb-16 px-4 relative">
+      <section className="pt-40 pb-16 px-4 relative overflow-hidden">
         {/* Decorative corners */}
         <div className="absolute top-20 left-4 w-16 h-16 border-l-4 border-t-4" style={{ borderColor: 'var(--boxing-gold)' }} />
         <div className="absolute top-20 right-4 w-16 h-16 border-r-4 border-t-4" style={{ borderColor: 'var(--boxing-gold)' }} />
 
-        <div className="max-w-4xl mx-auto text-center py-16">
+        {/* Animated Rings Background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.07] pointer-events-none">
+          <svg viewBox="0 0 400 400" className="w-full h-full">
+            <style>
+              {`
+                @keyframes ring-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+                @keyframes ring-spin-reverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+                @keyframes ring-pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+              `}
+            </style>
+            {[180, 160, 140, 120, 100, 80, 60, 40, 20].map((r, i) => (
+              <circle
+                key={i}
+                cx="200"
+                cy="200"
+                r={r}
+                fill="none"
+                stroke="var(--boxing-brown)"
+                strokeWidth="2"
+                style={{
+                  transformOrigin: 'center',
+                  animation: `${i % 2 === 0 ? 'ring-spin' : 'ring-spin-reverse'} ${30 + i * 5}s linear infinite, ring-pulse ${3 + i * 0.5}s ease-in-out infinite`,
+                  animationDelay: `${i * 0.2}s`
+                }}
+              />
+            ))}
+          </svg>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center py-16 relative z-10">
           <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-6" style={{ color: 'var(--boxing-gold)' }}>
             South Jordan, Utah • Est. 2025
           </p>

@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { CycloneMini } from '@/components/ui/cyclone'
 
 export default function ParentDemo() {
   const children = [
@@ -10,6 +13,17 @@ export default function ParentDemo() {
       todayHours: 2.5,
       currentQuest: 'Digital Photography',
       mood: 'engaged',
+      rings: [
+        { id: '1', name: 'Self', slug: 'self', level: 35, maxLevel: 100 },
+        { id: '2', name: 'Brain', slug: 'brain', level: 42, maxLevel: 100 },
+        { id: '3', name: 'Body', slug: 'body', level: 28, maxLevel: 100 },
+        { id: '4', name: 'Bubble', slug: 'bubble', level: 50, maxLevel: 100 },
+        { id: '5', name: 'Scene', slug: 'scene', level: 45, maxLevel: 100 },
+        { id: '6', name: 'Neighborhood', slug: 'neighborhood', level: 20, maxLevel: 100 },
+        { id: '7', name: 'Community', slug: 'community', level: 25, maxLevel: 100 },
+        { id: '8', name: 'World', slug: 'world', level: 15, maxLevel: 100 },
+        { id: '9', name: 'Ether', slug: 'ether', level: 38, maxLevel: 100 },
+      ],
     },
     {
       name: 'Jake',
@@ -19,15 +33,18 @@ export default function ParentDemo() {
       todayHours: 4,
       currentQuest: null,
       mood: 'playing',
+      rings: [
+        { id: '1', name: 'Self', slug: 'self', level: 55, maxLevel: 100 },
+        { id: '2', name: 'Brain', slug: 'brain', level: 30, maxLevel: 100 },
+        { id: '3', name: 'Body', slug: 'body', level: 60, maxLevel: 100 },
+        { id: '4', name: 'Bubble', slug: 'bubble', level: 45, maxLevel: 100 },
+        { id: '5', name: 'Scene', slug: 'scene', level: 35, maxLevel: 100 },
+        { id: '6', name: 'Neighborhood', slug: 'neighborhood', level: 25, maxLevel: 100 },
+        { id: '7', name: 'Community', slug: 'community', level: 20, maxLevel: 100 },
+        { id: '8', name: 'World', slug: 'world', level: 10, maxLevel: 100 },
+        { id: '9', name: 'Ether', slug: 'ether', level: 22, maxLevel: 100 },
+      ],
     },
-  ]
-
-  const emmaRings = [
-    { name: 'Self', level: 35 },
-    { name: 'Brain', level: 42 },
-    { name: 'Body', level: 28 },
-    { name: 'Bubble', level: 50 },
-    { name: 'Scene', level: 45 },
   ]
 
   const recentArtifacts = [
@@ -89,9 +106,12 @@ export default function ParentDemo() {
           {children.map((child) => (
             <div key={child.name} className="hud-border bg-card/50 p-4">
               <div className="flex items-center justify-between mb-3">
-                <div>
-                  <div className="font-mono text-xl font-bold text-primary">{child.name}</div>
-                  <div className="text-xs text-muted-foreground">Age {child.age}</div>
+                <div className="flex items-center gap-3">
+                  <CycloneMini rings={child.rings} />
+                  <div>
+                    <div className="font-mono text-xl font-bold text-primary">{child.name}</div>
+                    <div className="text-xs text-muted-foreground">Age {child.age}</div>
+                  </div>
                 </div>
                 <div className="text-right">
                   <div className="flex items-center gap-2">
@@ -124,23 +144,30 @@ export default function ParentDemo() {
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-4">
-            {/* Ring Progress (Emma) */}
+            {/* Ring Progress Comparison */}
             <div className="hud-border bg-card/50 p-4">
               <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
-                Emma's Ring Progress
+                Ring Progress Comparison
               </h2>
-              <div className="space-y-3">
-                {emmaRings.map((ring) => (
-                  <div key={ring.name} className="space-y-1">
-                    <div className="flex justify-between text-sm">
-                      <span className="font-mono text-foreground">{ring.name}</span>
-                      <span className="text-muted-foreground">{ring.level}%</span>
-                    </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-primary rounded-full"
-                        style={{ width: `${ring.level}%` }}
-                      />
+              <div className="grid md:grid-cols-2 gap-6">
+                {children.map((child) => (
+                  <div key={child.name}>
+                    <div className="font-mono text-sm text-primary mb-3">{child.name}</div>
+                    <div className="space-y-2">
+                      {child.rings.slice(0, 5).map((ring) => (
+                        <div key={ring.name} className="space-y-1">
+                          <div className="flex justify-between text-xs">
+                            <span className="font-mono text-foreground">{ring.name}</span>
+                            <span className="text-muted-foreground">{ring.level}%</span>
+                          </div>
+                          <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-primary rounded-full transition-all duration-1000"
+                              style={{ width: `${ring.level}%` }}
+                            />
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ))}
