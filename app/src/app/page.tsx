@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import { FeedbackForm } from '@/components/ui/feedback-form'
-import { DynamicPhotoBackground } from '@/components/ui/dynamic-photo-background'
-import { DynamicPhotoCard } from '@/components/ui/dynamic-photo-card'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -178,15 +176,8 @@ export default async function Home() {
       </section>
 
       {/* Legacy Section */}
-      <section id="legacy" className="py-20 px-4 relative min-h-[600px]">
-        <DynamicPhotoBackground
-          query="Gene Fullmer boxing champion 1950s"
-          overlay={true}
-          overlayOpacity={0.85}
-          fallbackColor="var(--boxing-brown)"
-          className="absolute inset-0"
-        />
-        <div className="max-w-4xl mx-auto relative z-10 py-8">
+      <section id="legacy" className="py-20 px-4" style={{ backgroundColor: 'var(--boxing-brown)' }}>
+        <div className="max-w-4xl mx-auto">
           <p className="font-[family-name:var(--font-oswald)] text-sm tracking-[0.4em] uppercase mb-4 text-center" style={{ color: 'var(--boxing-gold)' }}>
             The Legacy
           </p>
@@ -689,20 +680,16 @@ export default async function Home() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 items-start">
-            {/* Dynamic Photo */}
+            {/* Photo placeholder */}
             <div className="md:col-span-1">
-              <DynamicPhotoCard
-                query="youth program director educator mentor"
-                aspectRatio="square"
-                fallbackElement={
-                  <div className="text-center p-6">
-                    <div className="text-6xl mb-4">🎯</div>
-                    <div className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider" style={{ color: 'var(--boxing-gold)' }}>
-                      Ring Leader
-                    </div>
+              <div className="aspect-square rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--boxing-brown)' }}>
+                <div className="text-center p-6">
+                  <div className="text-6xl mb-4">🎯</div>
+                  <div className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider" style={{ color: 'var(--boxing-gold)' }}>
+                    Ring Leader
                   </div>
-                }
-              />
+                </div>
+              </div>
               <div className="mt-4 text-center">
                 <p className="font-[family-name:var(--font-playfair)] text-sm italic" style={{ color: 'var(--boxing-brown)', opacity: 0.7 }}>
                   "The Interface Between<br />Systems and Stories"
