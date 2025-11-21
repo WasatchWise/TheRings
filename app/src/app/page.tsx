@@ -404,15 +404,15 @@ export default async function Home() {
 
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { name: 'Self', desc: 'Identity, values, emotional regulation' },
-              { name: 'Brain', desc: 'Learning, problem-solving, creativity' },
-              { name: 'Body', desc: 'Physical fitness, nutrition, movement' },
-              { name: 'Bubble', desc: 'Family, close relationships, home' },
-              { name: 'Scene', desc: 'Friends, peers, social dynamics' },
-              { name: 'Neighborhood', desc: 'Local community, surroundings' },
-              { name: 'Community', desc: 'Civic engagement, service' },
-              { name: 'World', desc: 'Global awareness, cultures' },
-              { name: 'Ether', desc: 'Digital spaces, existential questions, spiritual growth. The outer ring that circles back to Self—where meaning, purpose, and identity are explored beyond the material world.' },
+              { name: 'Self', desc: 'Identity, values, emotional regulation. Champions choose their champion name, build mission statements, and create portfolios that reflect who they are. This is where agency begins—youth control their own story, not data points.' },
+              { name: 'Brain', desc: 'Learning, problem-solving, creativity. Quest-based learning across four pillars—Wellness, TechNest, Creative Studio, Civic Lab. HOMAGO flow: Hanging Out, Messing Around, Geeking Out. Real skills that transfer to careers and life.' },
+              { name: 'Body', desc: 'Physical fitness, nutrition, movement. Boxing fundamentals where youth earn their way into the ring—nothing is given. Strength training, yoga, nutrition workshops. The discipline of the body builds discipline of mind.' },
+              { name: 'Bubble', desc: 'Family, close relationships, home. Parent portals for attendance and progress. Family events, parent co-ops, home connections. The Bubble ring recognizes that growth happens in context—family engagement strengthens everything else.' },
+              { name: 'Scene', desc: 'Friends, peers, social dynamics. Crew-based quests where youth form teams, collaborate, and build belonging. Peer mentorship, social learning, and the power of "who you roll with" shapes who you become.' },
+              { name: 'Neighborhood', desc: 'Local community, surroundings. Partnerships with fire stations, senior centers, local businesses. Neighborhood service projects, block parties, understanding your immediate world. The Rings connects Champions to what\'s right outside the door.' },
+              { name: 'Community', desc: 'Civic engagement, service. Civic Lab pillar—youth council, environmental initiatives, intergenerational programs. Service hours tracked, leadership developed. Learning to be contributors, not just consumers.' },
+              { name: 'World', desc: 'Global awareness, cultures. Cultural exchange programs, world events discussions, language learning. Understanding that your neighborhood connects to neighborhoods everywhere. Global citizenship starts local.' },
+              { name: 'Ether', desc: 'Digital spaces, existential questions, spiritual growth. The outer ring that circles back to Self—where meaning, purpose, and identity are explored beyond the material world. Esports, streaming, digital creation, but also the big questions: Who am I? Why am I here? What matters?' },
             ].map((ring) => (
               <div
                 key={ring.name}
