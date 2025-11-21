@@ -214,7 +214,7 @@ export default async function Home() {
             Our approach isn't invented—it's grounded in brain science and proven learning models.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* HOMAGO */}
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl" style={{ backgroundColor: 'var(--boxing-gold)', color: 'var(--boxing-brown)' }}>
@@ -227,7 +227,7 @@ export default async function Home() {
                 <strong>H</strong>anging <strong>O</strong>ut → <strong>M</strong>essing <strong>A</strong>round → <strong>G</strong>eeking <strong>O</strong>ut
               </p>
               <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-                Youth start by exploring casually, then experiment with what interests them, then go deep on what they love. We don't force—we facilitate the natural progression.
+                Youth start by exploring casually, then experiment with what interests them, then go deep on what they love. We don't force—we facilitate.
               </p>
             </div>
 
@@ -240,10 +240,26 @@ export default async function Home() {
                 Brain Science
               </h3>
               <p className="font-[family-name:var(--font-playfair)] text-sm mb-4" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
-                Adolescent brains are wired for risk, novelty, and peer connection
+                Adolescent brains need risk, novelty, and peers
               </p>
               <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-                We don't fight this—we channel it. Real challenges, real stakes, real peer crews. The teenage brain isn't broken; it's built for exactly what we offer.
+                We channel it—real challenges, real stakes, real crews. The teenage brain isn't broken; it's built for exactly this.
+              </p>
+            </div>
+
+            {/* Developmental Stages */}
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl" style={{ backgroundColor: '#3d6b8c', color: 'var(--boxing-cream)' }}>
+                📈
+              </div>
+              <h3 className="font-[family-name:var(--font-oswald)] text-xl font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--boxing-brown)' }}>
+                Dev Stages
+              </h3>
+              <p className="font-[family-name:var(--font-playfair)] text-sm mb-4" style={{ color: 'var(--boxing-brown)', opacity: 0.9 }}>
+                10-12, 13-15, 16-18 need different things
+              </p>
+              <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
+                We meet youth where they are—younger kids need more structure, older teens need more autonomy. Same pillars, different approach.
               </p>
             </div>
 
@@ -259,7 +275,7 @@ export default async function Home() {
                 Self-Organized Learning Environment
               </p>
               <p className="font-[family-name:var(--font-playfair)] text-sm" style={{ color: 'var(--boxing-brown)', opacity: 0.8 }}>
-                Youth choose their quests, form their crews, and drive their learning. Staff are facilitators, not lecturers. Agency creates engagement that forced curriculum never can.
+                Youth choose quests, form crews, drive their learning. Staff facilitate, not lecture. Agency creates engagement.
               </p>
             </div>
           </div>
