@@ -56,63 +56,63 @@ export default function SeniorDemo() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ backgroundColor: '#faf8f5' }}>
       {/* Header */}
-      <header className="border-b border-border/30 bg-card/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <header className="border-b-2 sticky top-0 z-50" style={{ backgroundColor: '#ffffff', borderColor: '#3d2914' }}>
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/" className="font-mono text-sm text-muted-foreground hover:text-primary">
+            <Link href="/" className="font-[family-name:var(--font-oswald)] text-base uppercase tracking-wider hover:opacity-70" style={{ color: '#3d2914' }}>
               ← Back to Site
             </Link>
-            <span className="text-muted-foreground">/</span>
-            <span className="font-mono text-lg font-bold tracking-widest text-primary">
-              ELDER VIEW
+            <span style={{ color: '#c9a227' }}>|</span>
+            <span className="font-[family-name:var(--font-oswald)] text-xl font-bold tracking-widest uppercase" style={{ color: '#3d2914' }}>
+              Elder View
             </span>
           </div>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-lg font-[family-name:var(--font-playfair)]" style={{ color: '#3d2914' }}>
             Welcome back, {elder.name}
           </div>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto p-4 space-y-6">
+      <main className="max-w-5xl mx-auto p-6 space-y-8">
         {/* Impact Stats */}
-        <div className="grid grid-cols-3 gap-4">
-          <div className="hud-border bg-card/50 p-4 text-center">
-            <div className="text-3xl font-bold font-mono text-primary">{elder.storiesShared}</div>
-            <div className="text-xs font-mono text-muted-foreground uppercase">Stories Shared</div>
+        <div className="grid grid-cols-3 gap-6">
+          <div className="bg-white p-6 text-center shadow-sm border-t-4" style={{ borderColor: '#3d6b8c' }}>
+            <div className="text-4xl font-bold font-[family-name:var(--font-playfair)]" style={{ color: '#3d6b8c' }}>{elder.storiesShared}</div>
+            <div className="text-sm font-[family-name:var(--font-oswald)] uppercase tracking-wider mt-1" style={{ color: '#666' }}>Stories Shared</div>
           </div>
-          <div className="hud-border bg-card/50 p-4 text-center">
-            <div className="text-3xl font-bold font-mono text-accent">{elder.youthMentored}</div>
-            <div className="text-xs font-mono text-muted-foreground uppercase">Youth Mentored</div>
+          <div className="bg-white p-6 text-center shadow-sm border-t-4" style={{ borderColor: '#c9a227' }}>
+            <div className="text-4xl font-bold font-[family-name:var(--font-playfair)]" style={{ color: '#c9a227' }}>{elder.youthMentored}</div>
+            <div className="text-sm font-[family-name:var(--font-oswald)] uppercase tracking-wider mt-1" style={{ color: '#666' }}>Youth Mentored</div>
           </div>
-          <div className="hud-border bg-card/50 p-4 text-center">
-            <div className="text-3xl font-bold font-mono text-green-400">47</div>
-            <div className="text-xs font-mono text-muted-foreground uppercase">Hours Given</div>
+          <div className="bg-white p-6 text-center shadow-sm border-t-4" style={{ borderColor: '#4a7c59' }}>
+            <div className="text-4xl font-bold font-[family-name:var(--font-playfair)]" style={{ color: '#4a7c59' }}>47</div>
+            <div className="text-sm font-[family-name:var(--font-oswald)] uppercase tracking-wider mt-1" style={{ color: '#666' }}>Hours Given</div>
           </div>
         </div>
 
         {/* Youth Requests */}
-        <div className="hud-border bg-card/50 p-4">
-          <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">
+        <div className="bg-white p-6 shadow-sm">
+          <h2 className="font-[family-name:var(--font-oswald)] text-base uppercase tracking-wider mb-6" style={{ color: '#3d2914' }}>
             Youth Are Asking For You
           </h2>
           <div className="space-y-4">
             {youthRequests.map((req, i) => (
-              <div key={i} className="border border-primary/30 bg-primary/5 p-4 rounded">
-                <div className="flex justify-between items-start mb-2">
+              <div key={i} className="border-2 p-5 rounded-lg" style={{ borderColor: '#c9a227', backgroundColor: '#fffdf5' }}>
+                <div className="flex justify-between items-start mb-3">
                   <div>
-                    <div className="font-mono text-foreground">{req.from}</div>
-                    <div className="text-xs text-muted-foreground">{req.crew}</div>
+                    <div className="font-[family-name:var(--font-playfair)] text-lg font-semibold" style={{ color: '#3d2914' }}>{req.from}</div>
+                    <div className="text-sm" style={{ color: '#666' }}>{req.crew}</div>
                   </div>
-                  <div className="text-xs text-primary font-mono">{req.date}</div>
+                  <div className="text-base font-[family-name:var(--font-oswald)]" style={{ color: '#c9a227' }}>{req.date}</div>
                 </div>
-                <div className="text-sm text-muted-foreground mb-3">{req.request}</div>
-                <div className="flex gap-2">
-                  <button className="text-xs px-3 py-1 bg-green-500/20 text-green-400 rounded hover:bg-green-500/30">
+                <div className="text-base mb-4" style={{ color: '#444' }}>{req.request}</div>
+                <div className="flex gap-3">
+                  <button className="text-base px-5 py-2 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#4a7c59', color: 'white' }}>
                     Accept
                   </button>
-                  <button className="text-xs px-3 py-1 bg-muted text-muted-foreground rounded hover:bg-muted/80">
+                  <button className="text-base px-5 py-2 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#e5e5e5', color: '#666' }}>
                     Suggest Time
                   </button>
                 </div>
@@ -123,60 +123,58 @@ export default function SeniorDemo() {
 
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left Column */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-6">
             {/* Upcoming Events */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-base uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Where You're Needed
               </h2>
               <div className="space-y-3">
                 {upcomingEvents.map((event, i) => (
-                  <div key={i} className="flex justify-between items-center p-3 border border-border/30 bg-card/30 rounded">
+                  <div key={i} className="flex justify-between items-center p-4 border rounded-lg" style={{ borderColor: '#e5e5e5', backgroundColor: '#fafafa' }}>
                     <div>
-                      <div className="font-mono text-sm text-foreground">{event.name}</div>
-                      <div className="text-xs text-muted-foreground">{event.role}</div>
+                      <div className="font-[family-name:var(--font-playfair)] text-lg" style={{ color: '#3d2914' }}>{event.name}</div>
+                      <div className="text-sm" style={{ color: '#666' }}>{event.role}</div>
                     </div>
-                    <div className="text-xs text-primary font-mono">{event.date}</div>
+                    <div className="text-base font-[family-name:var(--font-oswald)]" style={{ color: '#3d6b8c' }}>{event.date}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Skills to Share */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-base uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Your Skills
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {skillsToShare.map((skill, i) => (
-                  <div key={i} className="flex justify-between items-center">
+                  <div key={i} className="flex justify-between items-center p-3 border-b" style={{ borderColor: '#e5e5e5' }}>
                     <div>
-                      <div className="font-mono text-sm text-foreground">{skill.skill}</div>
-                      <div className="text-xs text-muted-foreground">Last taught: {skill.lastTaught}</div>
+                      <div className="font-[family-name:var(--font-playfair)] text-lg" style={{ color: '#3d2914' }}>{skill.skill}</div>
+                      <div className="text-sm" style={{ color: '#666' }}>Last taught: {skill.lastTaught}</div>
                     </div>
-                    <div className={`text-xs font-mono ${
-                      skill.interest === 'High' ? 'text-green-400' : 'text-yellow-400'
-                    }`}>
+                    <div className={`text-base font-[family-name:var(--font-oswald)]`} style={{ color: skill.interest === 'High' ? '#4a7c59' : '#c9a227' }}>
                       {skill.interest} interest
                     </div>
                   </div>
                 ))}
               </div>
-              <button className="w-full mt-3 text-sm px-3 py-2 bg-primary/20 text-primary rounded hover:bg-primary/30 font-mono">
+              <button className="w-full mt-5 text-base px-5 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#3d6b8c', color: 'white' }}>
                 + Add a Skill to Share
               </button>
             </div>
 
             {/* Story Prompts */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-base uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Story Prompts
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {storyPrompts.map((prompt, i) => (
-                  <div key={i} className="p-3 border border-accent/30 bg-accent/5 rounded text-sm text-foreground">
-                    {prompt}
-                    <button className="block mt-2 text-xs text-accent hover:underline">
+                  <div key={i} className="p-5 border-2 rounded-lg" style={{ borderColor: '#c9a227', backgroundColor: '#fffdf5' }}>
+                    <div className="text-lg font-[family-name:var(--font-playfair)]" style={{ color: '#3d2914' }}>{prompt}</div>
+                    <button className="mt-3 text-base font-[family-name:var(--font-oswald)] hover:underline" style={{ color: '#c9a227' }}>
                       Record this story →
                     </button>
                   </div>
@@ -186,23 +184,23 @@ export default function SeniorDemo() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             {/* Wellness Classes */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-base uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Your Wellness
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {wellnessClasses.map((cls, i) => (
-                  <div key={i} className="flex justify-between items-center">
+                  <div key={i} className="flex justify-between items-center p-3 border-b" style={{ borderColor: '#e5e5e5' }}>
                     <div>
-                      <div className="font-mono text-sm text-foreground">{cls.name}</div>
-                      <div className="text-xs text-muted-foreground">{cls.day} {cls.time}</div>
+                      <div className="font-[family-name:var(--font-playfair)] text-lg" style={{ color: '#3d2914' }}>{cls.name}</div>
+                      <div className="text-sm" style={{ color: '#666' }}>{cls.day} {cls.time}</div>
                     </div>
                     {cls.enrolled ? (
-                      <span className="text-xs text-green-400">Enrolled</span>
+                      <span className="text-base font-[family-name:var(--font-oswald)]" style={{ color: '#4a7c59' }}>Enrolled</span>
                     ) : (
-                      <button className="text-xs px-2 py-1 bg-primary/20 text-primary rounded">
+                      <button className="text-base px-4 py-2 rounded-lg font-[family-name:var(--font-oswald)]" style={{ backgroundColor: '#3d6b8c', color: 'white' }}>
                         Join
                       </button>
                     )}
@@ -212,24 +210,24 @@ export default function SeniorDemo() {
             </div>
 
             {/* Recent Connections */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-base uppercase tracking-wider mb-5" style={{ color: '#3d2914' }}>
                 Your Connections
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {recentConnections.map((conn, i) => (
-                  <div key={i} className="text-sm border-l-2 border-green-500/30 pl-3">
-                    <div className="font-mono text-foreground">{conn.name}</div>
-                    <div className="text-xs text-muted-foreground">{conn.type} • {conn.note}</div>
+                  <div key={i} className="border-l-4 pl-4" style={{ borderColor: '#4a7c59' }}>
+                    <div className="font-[family-name:var(--font-playfair)] text-lg" style={{ color: '#3d2914' }}>{conn.name}</div>
+                    <div className="text-sm" style={{ color: '#666' }}>{conn.type} • {conn.note}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Legacy Note */}
-            <div className="hud-border bg-accent/10 border-accent/30 p-4">
-              <div className="text-sm text-accent font-mono mb-2">Your Legacy</div>
-              <div className="text-xs text-muted-foreground">
+            <div className="p-6 border-2 rounded-lg" style={{ borderColor: '#c9a227', backgroundColor: '#fffdf5' }}>
+              <div className="text-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider mb-2" style={{ color: '#c9a227' }}>Your Legacy</div>
+              <div className="text-base font-[family-name:var(--font-playfair)]" style={{ color: '#3d2914' }}>
                 Your stories and skills are shaping the next generation. Thank you for being here.
               </div>
             </div>
@@ -237,7 +235,7 @@ export default function SeniorDemo() {
         </div>
 
         {/* Footer Note */}
-        <div className="text-center text-xs text-muted-foreground font-mono py-4">
+        <div className="text-center text-sm py-6 font-[family-name:var(--font-playfair)] italic" style={{ color: '#999' }}>
           This is a simulated elder view showing youth requests, skill sharing, and legacy building.
         </div>
       </main>

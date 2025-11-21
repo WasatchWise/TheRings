@@ -46,124 +46,124 @@ export default function PartnerDemo() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ backgroundColor: '#f8f9fa' }}>
       {/* Header */}
-      <header className="border-b border-border/30 bg-card/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <header className="border-b-2 sticky top-0 z-50" style={{ backgroundColor: '#ffffff', borderColor: '#1a365d' }}>
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/" className="font-mono text-sm text-muted-foreground hover:text-primary">
+            <Link href="/" className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider hover:opacity-70" style={{ color: '#1a365d' }}>
               ← Back to Site
             </Link>
-            <span className="text-muted-foreground">/</span>
-            <span className="font-mono text-lg font-bold tracking-widest text-primary">
-              PARTNER EVENT VIEW
+            <span style={{ color: '#38a169' }}>|</span>
+            <span className="font-[family-name:var(--font-oswald)] text-lg font-bold tracking-widest uppercase" style={{ color: '#1a365d' }}>
+              Partner Event View
             </span>
           </div>
           <div className="text-sm">
-            <span className="text-muted-foreground">Partner: </span>
-            <span className="text-accent font-mono">{event.partner}</span>
+            <span style={{ color: '#666' }}>Partner: </span>
+            <span className="font-[family-name:var(--font-playfair)] font-semibold" style={{ color: '#1a365d' }}>{event.partner}</span>
           </div>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto p-4 space-y-6">
+      <main className="max-w-6xl mx-auto p-6 space-y-6">
         {/* Event Header */}
-        <div className="hud-border bg-card/50 p-6">
+        <div className="bg-white p-6 shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className="font-mono text-2xl font-bold text-primary mb-1">{event.name}</h1>
-              <div className="text-muted-foreground">
+              <h1 className="font-[family-name:var(--font-playfair)] text-2xl font-bold mb-1" style={{ color: '#1a365d' }}>{event.name}</h1>
+              <div style={{ color: '#666' }}>
                 {event.date} • {event.time}
               </div>
             </div>
             <div className="text-right">
-              <div className="text-3xl font-bold font-mono text-accent">
+              <div className="text-4xl font-bold font-[family-name:var(--font-playfair)]" style={{ color: '#38a169' }}>
                 {event.registered}/{event.capacity}
               </div>
-              <div className="text-xs text-muted-foreground uppercase">Registered</div>
+              <div className="text-sm font-[family-name:var(--font-oswald)] uppercase tracking-wider" style={{ color: '#666' }}>Registered</div>
             </div>
           </div>
 
           {/* Progress Bar */}
-          <div className="mt-4">
-            <div className="h-3 bg-muted rounded-full overflow-hidden">
+          <div className="mt-5">
+            <div className="h-4 rounded-full overflow-hidden" style={{ backgroundColor: '#e5e5e5' }}>
               <div
-                className="h-full bg-accent rounded-full"
-                style={{ width: `${(event.registered / event.capacity) * 100}%` }}
+                className="h-full rounded-full"
+                style={{ width: `${(event.registered / event.capacity) * 100}%`, backgroundColor: '#38a169' }}
               />
             </div>
-            <div className="flex justify-between mt-1 text-xs text-muted-foreground">
+            <div className="flex justify-between mt-2 text-sm" style={{ color: '#666' }}>
               <span>{event.capacity - event.registered} spots remaining</span>
-              <span>{Math.round((event.registered / event.capacity) * 100)}% full</span>
+              <span className="font-semibold" style={{ color: '#38a169' }}>{Math.round((event.registered / event.capacity) * 100)}% full</span>
             </div>
           </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left Column */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-6">
             {/* Attendees */}
-            <div className="hud-border bg-card/50 p-4">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            <div className="bg-white p-6 shadow-sm">
+              <div className="flex justify-between items-center mb-5">
+                <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider" style={{ color: '#1a365d' }}>
                   Attendees
                 </h2>
-                <span className="text-xs text-muted-foreground">
+                <span className="text-sm" style={{ color: '#666' }}>
                   {event.checkedIn} checked in
                 </span>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {attendees.map((person, i) => (
-                  <div key={i} className="flex items-center justify-between p-2 border border-border/30 bg-card/30 rounded">
+                  <div key={i} className="flex items-center justify-between p-3 border rounded-lg" style={{ borderColor: '#e5e5e5', backgroundColor: '#fafafa' }}>
                     <div>
-                      <div className="font-mono text-sm text-foreground">{person.name}</div>
+                      <div className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#1a365d' }}>{person.name}</div>
                       {person.partner && (
-                        <div className="text-xs text-muted-foreground">{person.partner}</div>
+                        <div className="text-sm" style={{ color: '#666' }}>{person.partner}</div>
                       )}
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-yellow-400">{person.status}</span>
-                      <button className="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded hover:bg-green-500/30">
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-[family-name:var(--font-oswald)]" style={{ color: '#d69e2e' }}>{person.status}</span>
+                      <button className="text-sm px-4 py-2 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider" style={{ backgroundColor: '#38a169', color: 'white' }}>
                         Check In
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-3 pt-3 border-t border-border/30 text-center">
-                <span className="text-xs text-muted-foreground">
+              <div className="mt-4 pt-4 text-center" style={{ borderTop: '1px solid #e5e5e5' }}>
+                <span className="text-sm" style={{ color: '#666' }}>
                   + {event.registered - attendees.length} more registered
                 </span>
               </div>
             </div>
 
             {/* Revenue Breakdown */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#1a365d' }}>
                 Revenue Breakdown
               </h2>
-              <div className="grid grid-cols-2 gap-4 mb-4">
-                <div>
-                  <div className="text-xs text-muted-foreground">Ticket Price</div>
-                  <div className="text-xl font-mono text-foreground">${revenue.ticketPrice}</div>
+              <div className="grid grid-cols-2 gap-6 mb-5">
+                <div className="p-4 rounded-lg" style={{ backgroundColor: '#f8f9fa' }}>
+                  <div className="text-sm" style={{ color: '#666' }}>Ticket Price</div>
+                  <div className="text-2xl font-[family-name:var(--font-playfair)] font-bold" style={{ color: '#1a365d' }}>${revenue.ticketPrice}</div>
                 </div>
-                <div>
-                  <div className="text-xs text-muted-foreground">Total Revenue</div>
-                  <div className="text-xl font-mono text-green-400">
+                <div className="p-4 rounded-lg" style={{ backgroundColor: '#f0fff4' }}>
+                  <div className="text-sm" style={{ color: '#666' }}>Total Revenue</div>
+                  <div className="text-2xl font-[family-name:var(--font-playfair)] font-bold" style={{ color: '#38a169' }}>
                     ${revenue.ticketPrice * revenue.registered}
                   </div>
                 </div>
               </div>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Partner ({revenue.partnerSplit}%)</span>
-                  <span className="font-mono text-foreground">
+              <div className="space-y-3 pt-4" style={{ borderTop: '1px solid #e5e5e5' }}>
+                <div className="flex justify-between text-base">
+                  <span style={{ color: '#666' }}>Partner ({revenue.partnerSplit}%)</span>
+                  <span className="font-[family-name:var(--font-playfair)] font-semibold" style={{ color: '#1a365d' }}>
                     ${Math.round(revenue.ticketPrice * revenue.registered * (revenue.partnerSplit / 100))}
                   </span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">The Rings ({revenue.ringSplit}%)</span>
-                  <span className="font-mono text-primary">
+                <div className="flex justify-between text-base">
+                  <span style={{ color: '#666' }}>The Rings ({revenue.ringSplit}%)</span>
+                  <span className="font-[family-name:var(--font-playfair)] font-semibold" style={{ color: '#3182ce' }}>
                     ${Math.round(revenue.ticketPrice * revenue.registered * (revenue.ringSplit / 100))}
                   </span>
                 </div>
@@ -171,18 +171,18 @@ export default function PartnerDemo() {
             </div>
 
             {/* Past Event Feedback */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#1a365d' }}>
                 Past Event Feedback
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {feedback.map((fb, i) => (
-                  <div key={i} className="p-3 border border-border/30 bg-card/30 rounded">
+                  <div key={i} className="p-4 border rounded-lg" style={{ borderColor: '#e5e5e5', backgroundColor: '#fafafa' }}>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="font-mono text-sm text-foreground">{fb.event}</span>
-                      <span className="text-yellow-400">★ {fb.rating}</span>
+                      <span className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#1a365d' }}>{fb.event}</span>
+                      <span className="font-[family-name:var(--font-oswald)] text-lg" style={{ color: '#d69e2e' }}>★ {fb.rating}</span>
                     </div>
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-sm" style={{ color: '#666' }}>
                       {fb.comments} comments • "{fb.highlight}"
                     </div>
                   </div>
@@ -192,63 +192,63 @@ export default function PartnerDemo() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             {/* Event Details */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#1a365d' }}>
                 Event Details
               </h2>
-              <div className="space-y-3 text-sm">
+              <div className="space-y-4">
                 <div>
-                  <div className="text-muted-foreground text-xs">Materials</div>
-                  <div className="text-foreground">{eventDetails.materials}</div>
+                  <div className="text-sm" style={{ color: '#666' }}>Materials</div>
+                  <div className="text-base font-[family-name:var(--font-playfair)]" style={{ color: '#1a365d' }}>{eventDetails.materials}</div>
                 </div>
                 <div>
-                  <div className="text-muted-foreground text-xs">Beverages</div>
-                  <div className="text-foreground">{eventDetails.beverages}</div>
+                  <div className="text-sm" style={{ color: '#666' }}>Beverages</div>
+                  <div className="text-base font-[family-name:var(--font-playfair)]" style={{ color: '#1a365d' }}>{eventDetails.beverages}</div>
                 </div>
                 <div>
-                  <div className="text-muted-foreground text-xs">Parking</div>
-                  <div className="text-foreground">{eventDetails.parking}</div>
+                  <div className="text-sm" style={{ color: '#666' }}>Parking</div>
+                  <div className="text-base font-[family-name:var(--font-playfair)]" style={{ color: '#1a365d' }}>{eventDetails.parking}</div>
                 </div>
                 <div>
-                  <div className="text-muted-foreground text-xs">Contact</div>
-                  <div className="text-accent">{eventDetails.contact}</div>
+                  <div className="text-sm" style={{ color: '#666' }}>Contact</div>
+                  <div className="text-base" style={{ color: '#3182ce' }}>{eventDetails.contact}</div>
                 </div>
               </div>
             </div>
 
             {/* Quick Actions */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#1a365d' }}>
                 Actions
               </h2>
-              <div className="space-y-2">
-                <button className="w-full text-left text-sm px-3 py-2 bg-primary/20 text-primary rounded hover:bg-primary/30 font-mono">
+              <div className="space-y-3">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#3182ce', color: 'white' }}>
                   Send Reminder
                 </button>
-                <button className="w-full text-left text-sm px-3 py-2 bg-accent/20 text-accent rounded hover:bg-accent/30 font-mono">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#805ad5', color: 'white' }}>
                   Export Attendee List
                 </button>
-                <button className="w-full text-left text-sm px-3 py-2 bg-green-500/20 text-green-400 rounded hover:bg-green-500/30 font-mono">
+                <button className="w-full text-left text-sm px-4 py-3 rounded-lg font-[family-name:var(--font-oswald)] uppercase tracking-wider transition-colors" style={{ backgroundColor: '#38a169', color: 'white' }}>
                   Open Check-In Mode
                 </button>
               </div>
             </div>
 
             {/* Upcoming Partner Events */}
-            <div className="hud-border bg-card/50 p-4">
-              <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <div className="bg-white p-6 shadow-sm">
+              <h2 className="font-[family-name:var(--font-oswald)] text-sm uppercase tracking-wider mb-5" style={{ color: '#1a365d' }}>
                 More Partner Events
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {upcomingPartnerEvents.map((evt, i) => (
-                  <div key={i} className="text-sm">
-                    <div className="font-mono text-foreground">{evt.name}</div>
-                    <div className="text-xs text-muted-foreground">
+                  <div key={i} className="border-l-4 pl-3" style={{ borderColor: '#38a169' }}>
+                    <div className="font-[family-name:var(--font-playfair)] text-base" style={{ color: '#1a365d' }}>{evt.name}</div>
+                    <div className="text-sm" style={{ color: '#666' }}>
                       {evt.partner} • {evt.date}
                     </div>
-                    <div className="text-xs text-green-400">{evt.registered} registered</div>
+                    <div className="text-sm" style={{ color: '#38a169' }}>{evt.registered} registered</div>
                   </div>
                 ))}
               </div>
@@ -257,7 +257,7 @@ export default function PartnerDemo() {
         </div>
 
         {/* Footer Note */}
-        <div className="text-center text-xs text-muted-foreground font-mono py-4">
+        <div className="text-center text-sm py-6 font-[family-name:var(--font-playfair)] italic" style={{ color: '#999' }}>
           This is a simulated partner event view showing registration, revenue splits, and event management.
         </div>
       </main>
